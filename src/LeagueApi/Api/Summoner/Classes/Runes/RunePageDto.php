@@ -1,0 +1,42 @@
+<?php
+/**
+ * @author Simeon Kolev
+ */
+
+namespace LeagueApi\Api\Summoner\Classes\Runes;
+
+
+use JMS\Serializer\Annotation as JMS;
+
+/**
+ * Class RunePageDto
+ */
+class RunePageDto {
+    /**
+     * @JMS\Type("boolean")
+     * @var boolean $current
+     * Indicates if the page is the current page.
+     */
+    private $current;
+
+    /**
+     * @JMS\Type("integer")
+     * @var integer $id
+     * Rune page ID.
+     */
+    private $id;
+
+    /**
+     * @JMS\Type("array<LeagueApi\Api\Summoner\Classes\Runes\RuneSlotDto>")
+     * @var RuneSlotDto[]
+     * Collection of rune slots associated with the rune page.
+     */
+    private $slots;
+
+    /**
+     * @JMS\Type("string")
+     * @var string $name
+     * Rune page name.
+     */
+    private $name;
+} 

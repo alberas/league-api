@@ -1,0 +1,25 @@
+{
+  "name": "skolev/league-api",
+  "description": "API wrapper for RIOT League of legends.",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Simeon Kolev",
+      "email": "simeon.kolev9@gmail.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "5.2.0",
+    "jms/serializer": "0.16.0"
+  },
+  "require-dev" : {
+    "symfony/var-dumper": "v2.6.3",
+    "symfony/debug": "v2.6.3"
+  },
+  "autoload": {
+    "psr-0": {
+      "LeagueApi": "src/",
+    }
+  }
+}
