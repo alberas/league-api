@@ -22,9 +22,8 @@ class ChampionApi extends RegionApi{
      */
     private $version = 'v1.2';
 
-    public function __construct($apiKey, $region = 'eune')
+    public function __construct()
     {
-        parent::__construct($apiKey, $region);
         $this->classesNamespace = __NAMESPACE__ . '\\Classes\\';
     }
 

@@ -7,6 +7,7 @@ namespace LeagueApi\LolStatus;
 
 
 use GuzzleHttp\Client;
+use JMS\Serializer\Serializer;
 use LeagueApi\AbstractApi;
 use LeagueApi\LolStatus\Classes\Shard;
 use LeagueApi\LolStatus\Classes\ShardStatus;
@@ -19,7 +20,6 @@ class LolStatusApi extends AbstractApi {
 
     public function __construct()
     {
-        parent::__construct();
         $this->classesNamespace = __NAMESPACE__ . '\\Classes\\';
         $this->client = new Client(['base_url' => 'http://status.leagueoflegends.com']);
     }

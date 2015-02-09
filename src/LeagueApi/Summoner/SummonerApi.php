@@ -12,7 +12,8 @@ use LeagueApi\Summoner\Classes\Masteries\MasteryPagesDto;
 use LeagueApi\Summoner\Classes\Runes\RunePagesDto;
 use LeagueApi\Summoner\Classes\SummonerDto;
 
-class SummonerApi extends RegionApi{
+class SummonerApi extends RegionApi
+{
     /**
      * @var string $classesNamespace
      */
@@ -23,10 +24,8 @@ class SummonerApi extends RegionApi{
      */
     private $version = 'v1.4';
 
-    public function __construct($apiKey, $region = 'eune')
+    public function __construct()
     {
-        parent::__construct($apiKey, $region);
-
         $this->classesNamespace = __NAMESPACE__ . '\\Classes\\';
     }
 

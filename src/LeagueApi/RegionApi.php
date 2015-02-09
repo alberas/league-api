@@ -24,13 +24,9 @@ abstract class RegionApi extends AbstractApi{
      */
     abstract protected function createClient();
 
-    public function __construct($apiKey, $region)
+    public function setApiKey($apiKey)
     {
-        parent::__construct();
-
         $this->apiKey = $apiKey;
-
-        $this->setRegion($region);
     }
 
     public function setRegion($region)
