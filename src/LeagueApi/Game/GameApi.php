@@ -30,8 +30,8 @@ class GameApi extends RegionApi{
     {
         return new Client(
             [
-                'base_url' => ['http://{region}.api.pvp.net/api/lol/{region}/{version}/game/', ['region' => $this->region, 'version' => $this->version]],
-                'defaults' => ['query' => ['api_key' => $this->apiKey]]
+                'base_url' => ['https://{region}.api.pvp.net/api/lol/{region}/{version}/game/', ['region' => $this->region, 'version' => $this->version]],
+                'defaults' => ['query' => ['api_key' => $this->apiKey], 'verify' => false]
             ]
         );
     }

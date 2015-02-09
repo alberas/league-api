@@ -31,8 +31,8 @@ class ChampionApi extends RegionApi{
     {
         return new Client(
             [
-                'base_url' => ['http://{region}.api.pvp.net/api/lol/{region}/{version}/', ['region' => $this->region, 'version' => $this->version]],
-                'defaults' => ['query' => ['api_key' => $this->apiKey]]
+                'base_url' => ['https://{region}.api.pvp.net/api/lol/{region}/{version}/', ['region' => $this->region, 'version' => $this->version]],
+                'defaults' => ['query' => ['api_key' => $this->apiKey], 'verify' => false]
             ]
         );
     }
