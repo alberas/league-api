@@ -24,6 +24,8 @@ abstract class AbstractApi {
     public function setSerializer(Serializer $serializer)
     {
         $this->serializer = $serializer;
+
+        return $this;
     }
 
     /**

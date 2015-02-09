@@ -27,6 +27,8 @@ abstract class RegionApi extends AbstractApi{
     public function setApiKey($apiKey)
     {
         $this->apiKey = $apiKey;
+
+        return $this;
     }
 
     public function setRegion($region)
@@ -34,5 +36,7 @@ abstract class RegionApi extends AbstractApi{
         $this->region = $region;
 
         $this->client = $this->createClient();
+
+        return $this;
     }
 }
