@@ -21,9 +21,13 @@ abstract class AbstractApi {
      */
     protected $serializer;
 
-    public function __construct()
+    public function __construct(Serializer $serializer = null)
     {
-        $this->serializer = SerializerBuilder::create()->build();
+        if ($serializer instanceof Serializer){
+            $this->serializer = $serializer;
+        } else {
+            $this->serializer = SerializerBuilder::create()->build();
+        }
     }
 
     /**
