@@ -11,6 +11,7 @@ use LeagueApi\LolStatus\Classes\Shard;
 use LeagueApi\LolStatus\Classes\ShardStatus;
 
 class LolStatusApi extends Api {
+    
     /**
      * @return Shard[]
      */
@@ -27,4 +28,5 @@ class LolStatusApi extends Api {
     {
         return $this->getData('/shards/' . $region, [], ShardStatus::class);
     }
+    
 }

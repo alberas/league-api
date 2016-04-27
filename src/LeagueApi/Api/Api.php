@@ -28,6 +28,10 @@ abstract class Api implements ApiInterface
     {
         $defaultQuery = $this->client->getConfig('query');
 
+        if ($defaultQuery === null) {
+            $defaultQuery = [];
+        }
+
         $query = array_merge($query, $defaultQuery);
 
         $response = $this->client->request('GET', $url, ['query' => $query]);
