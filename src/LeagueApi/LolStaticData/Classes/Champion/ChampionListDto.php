@@ -8,6 +8,10 @@ namespace LeagueApi\LolStaticData\Classes\Champion;
 use JMS\Serializer\Annotation as JMS;
 use LeagueApi\Classes\ListDto;
 
+/**
+ * Class ChampionListDto
+ * @package LeagueApi\LolStaticData\Classes\Champion
+ */
 class ChampionListDto extends ListDto {
     /**
      * @JMS\Type("array<string, LeagueApi\LolStaticData\Classes\Champion\ChampionDto>")

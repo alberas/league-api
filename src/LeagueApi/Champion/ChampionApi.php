@@ -6,44 +6,25 @@
 namespace LeagueApi\Champion;
 
 
-use GuzzleHttp\Client;
+use LeagueApi\Api\Api;
 use LeagueApi\Champion\Classes\ChampionDto;
 use LeagueApi\Champion\Classes\ChampionListDto;
-use LeagueApi\RegionApi;
 
-class ChampionApi extends RegionApi{
-    /**
-     * @var string $classesNamespace
-     */
-    private $classesNamespace;
+class ChampionApi extends Api{
 
     /**
-     * @var string $version
-     */
-    private $version = 'v1.2';
-
-    public function __construct()
-    {
-        $this->classesNamespace = __NAMESPACE__ . '\\Classes\\';
-    }
-
-    protected function createClient()
-    {
-        return new Client(
-            [
-                'base_url' => ['https://{region}.api.pvp.net/api/lol/{region}/{version}/', ['region' => $this->region, 'version' => $this->version]],
-                'defaults' => ['query' => ['api_key' => $this->apiKey], 'verify' => false]
-            ]
-        );
-    }
-
-    /**
-     * @param string $freeToPlay
+     * @param boolean $freeToPlay Optional filter param to retrieve only free to play champions.
      * @return ChampionListDto
      */
-    public function getChampions($freeToPlay = '')
+    public function getChampions($freeToPlay = false)
     {
-        return $this->getData('champion', ['freeToPlay' => $freeToPlay], $this->classesNamespace . 'ChampionListDto');
+        $query = array();
+
+        if ($freeToPlay) {
+            $query['freeToPlay'] = 'true';
+        }
+
+        return $this->getData('champion', $query, ChampionListDto::class);
     }
 
     /**
@@ -52,6 +33,6 @@ class ChampionApi extends RegionApi{
      */
     public function getChampion($id)
     {
-        return $this->getData(['champion/{id}', ['id' => $id]], [], $this->classesNamespace . 'ChampionDto');
+        return $this->getData('champion/' . $id, [], ChampionDto::class);
     }
 }

@@ -6,46 +6,23 @@
 namespace LeagueApi\Summoner;
 
 
-use GuzzleHttp\Client;
-use LeagueApi\RegionApi;
+use LeagueApi\Api\Api;
 use LeagueApi\Summoner\Classes\Masteries\MasteryPagesDto;
 use LeagueApi\Summoner\Classes\Runes\RunePagesDto;
 use LeagueApi\Summoner\Classes\SummonerDto;
 
-class SummonerApi extends RegionApi
+class SummonerApi extends Api
 {
-    /**
-     * @var string $classesNamespace
-     */
-    private $classesNamespace;
-
-    /**
-     * @var string $version
-     */
-    private $version = 'v1.4';
-
-    public function __construct()
-    {
-        $this->classesNamespace = __NAMESPACE__ . '\\Classes\\';
-    }
-
-    protected function createClient()
-    {
-        return new Client(
-            [
-                'base_url' => ['https://{region}.api.pvp.net/api/lol/{region}/{version}/summoner/', ['region' => $this->region, 'version' => $this->version]],
-                'defaults' => ['query' => ['api_key' => $this->apiKey], 'verify' => false]
-            ]
-        );
-    }
-
     /**
      * @param $summonerName
      * @return SummonerDto
      */
     public function getSummonerByName($summonerName)
     {
-        return $this->getData(['by-name/{summonerName}', ['summonerName' => $this->standardizeSummonerName($summonerName)]], array(), 'array<string, ' . $this->classesNamespace . 'SummonerDto' . '>')[$this->standardizeSummonerName($summonerName)];
+        $url = 'by-name/' . $this->standardizeSummonerName($summonerName);
+        $dataType = sprintf('array<string, %s>', SummonerDto::class);
+
+        return $this->getData($url, [], $dataType)[$this->standardizeSummonerName($summonerName)];
     }
 
     /**
@@ -54,7 +31,9 @@ class SummonerApi extends RegionApi
      */
     public function getSummonerById($summonerId)
     {
-        return $this->getData(['{summonerId}', ['summonerId' => $summonerId]], array(), 'array<string, ' . $this->classesNamespace . 'SummonerDto' . '>')[$summonerId];
+        $dataType = sprintf('array<string, %s>', SummonerDto::class);
+
+        return $this->getData($summonerId, [], $dataType)[$summonerId];
     }
 
     /**
@@ -63,7 +42,10 @@ class SummonerApi extends RegionApi
      */
     public function getSummonersByName(array $summonerNames)
     {
-        return $this->getData(['by-name/{summonerNames}', ['summonerNames' => implode(',', array_filter($summonerNames, array($this, 'standardizeSummonerName')))]], array(), 'array<string, ' . $this->classesNamespace . 'SummonerDto' . '>');
+        $url = 'by-name/' . implode(',', array_filter($summonerNames, [$this, 'standardizeSummonerName']));
+        $dataType = sprintf('array<string, %s>', SummonerDto::class);
+
+        return $this->getData($url, [], $dataType);
     }
 
     /**
@@ -72,7 +54,10 @@ class SummonerApi extends RegionApi
      */
     public function getSummonersById(array $summonerIds)
     {
-        return $this->getData(['{summonerIds}', ['summonerIds' => $summonerIds]], array(), 'array<string, ' . $this->classesNamespace . 'SummonerDto' . '>');
+        $url = implode(',', $summonerIds);
+        $dataType = sprintf('array<string, %s>', SummonerDto::class);
+
+        return $this->getData($url, [], $dataType);
     }
 
     /**
@@ -81,7 +66,11 @@ class SummonerApi extends RegionApi
      */
     public function getMasteries(array $summonerIds)
     {
-        return $this->getData(['{summonerIds}/masteries', ['summonerIds' => implode(',', $summonerIds)]], array(), 'array<string, ' . $this->classesNamespace . 'Masteries\\MasteryPagesDto' . '>');
+        $url = implode(',', $summonerIds) . '/masteries';
+
+        $dataType = sprintf('array<string, %s>', MasteryPagesDto::class);
+
+        return $this->getData($url, [], $dataType);
     }
 
     /**
@@ -91,7 +80,10 @@ class SummonerApi extends RegionApi
     public function getRunes(array $summonerIds)
     {
 
-        return $this->getData(['{summonerIds}/runes', ['summonerIds' => implode(',', $summonerIds)]], array(), 'array<string, ' . $this->classesNamespace . 'Runes\\RunePagesDto' . '>');
+        $url = implode(',', $summonerIds) . '/runes';
+        $dataType = sprintf('array<string, %s>', RunePagesDto::class);
+
+        return $this->getData($url, [], $dataType);
     }
 
     /**
@@ -100,7 +92,10 @@ class SummonerApi extends RegionApi
      */
     public function getNames(array $summonerIds)
     {
-        return $this->getData(['{summonerIds}/name', ['summonerIds' => implode(',', $summonerIds)]], array(), 'array<string, string>');
+        $url = implode(',', $summonerIds) . '/name';
+        $dataType = 'array<string, string>';
+
+        return $this->getData($url, [], $dataType);
 
     }
 

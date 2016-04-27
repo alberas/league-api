@@ -51,7 +51,7 @@ abstract class Spell {
     protected $description;
 
     /**
-     * @JMS\Type("array<array<double>>")
+     * @JMS\Type("array")
      * @var array[double[]] $effect
      */
     protected $effect;

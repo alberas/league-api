@@ -6,7 +6,8 @@
 namespace LeagueApi\LolStaticData;
 
 
-use GuzzleHttp\Client;
+use LeagueApi\Api\Api;
+use LeagueApi\LolStaticData\Classes\Champion\ChampionDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionListDto;
 use LeagueApi\LolStaticData\Classes\Item\ItemDto;
 use LeagueApi\LolStaticData\Classes\Item\ItemListDto;
@@ -15,37 +16,12 @@ use LeagueApi\LolStaticData\Classes\Map\MapListDto;
 use LeagueApi\LolStaticData\Classes\Mastery\MasteryDto;
 use LeagueApi\LolStaticData\Classes\Mastery\MasteryListDto;
 use LeagueApi\LolStaticData\Classes\Realm\RealmDto;
+use LeagueApi\LolStaticData\Classes\Rune\RuneDto;
 use LeagueApi\LolStaticData\Classes\Rune\RuneListDto;
 use LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellDto;
 use LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellListDto;
-use LeagueApi\RegionApi;
 
-class LolStaticDataApi extends RegionApi {
-    /**
-     * @var string $classesNamespace
-     */
-    private $classesNamespace;
-
-    /**
-     * @var string $version
-     */
-    private $version = 'v1.2';
-
-    public function __construct()
-    {
-        $this->classesNamespace = __NAMESPACE__ . '\\Classes\\';
-    }
-
-    protected function createClient()
-    {
-        return new Client(
-            [
-                'base_url' => ['https://{region}.api.pvp.net/api/lol/static-data/{region}/{version}/', ['region' => $this->region, 'version' => $this->version]],
-                'defaults' => ['query' => ['api_key' => $this->apiKey], 'verify' => false]
-            ]
-        );
-    }
-
+class LolStaticDataApi extends Api {
     /**
      * @param string $champData
      * @param string $dataById
@@ -58,7 +34,7 @@ class LolStaticDataApi extends RegionApi {
         return $this->getData(
             'champion',
             ['champData' => $champData, 'dataById' => $dataById, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'Champion\\ChampionListDto'
+            ChampionListDto::class
         );
     }
 
@@ -72,9 +48,9 @@ class LolStaticDataApi extends RegionApi {
     public function getChampion($id, $champData = '', $version = '', $locale = '')
     {
         return $this->getData(
-            ['champion/{id}', ['id' => $id]],
+            'champion' . $id,
             ['champData' => $champData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'Champion\\ChampionDto'
+            ChampionDto::class
         );
     }
 
@@ -89,7 +65,7 @@ class LolStaticDataApi extends RegionApi {
         return $this->getData(
             'item',
             ['itemListData' => $itemListData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'Item\\ItemListDto'
+            ItemListDto::class
         );
     }
 
@@ -103,9 +79,9 @@ class LolStaticDataApi extends RegionApi {
     public function getItem($id, $itemData = '', $locale = '', $version = '')
     {
         return $this->getData(
-            ['item/{id}', ['id' => $id]],
+            'item' . $id,
             ['itemData' => $itemData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'Item\\ItemDto'
+            ItemDto::class
         );
     }
 
@@ -119,7 +95,7 @@ class LolStaticDataApi extends RegionApi {
         return $this->getData(
             'language-strings',
             ['locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'LanguageStrings\\LanguageStringsDto'
+            LanguageStringsDto::class
         );
     }
 
@@ -128,7 +104,7 @@ class LolStaticDataApi extends RegionApi {
      */
     public function getLanguages()
     {
-        return $this->getData('languages', array(), 'array<string>');
+        return $this->getData('languages', [], 'array<string>');
     }
 
     /**
@@ -136,7 +112,7 @@ class LolStaticDataApi extends RegionApi {
      */
     public function getMaps()
     {
-        return $this->getData('map', array(), $this->classesNamespace . 'Map\\MapListDto');
+        return $this->getData('map', [], MapListDto::class);
     }
 
     /**
@@ -150,7 +126,7 @@ class LolStaticDataApi extends RegionApi {
         return $this->getData(
             'mastery',
             ['masteryListData' => $masteryListData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'Mastery\\MasteryListDto'
+            MasteryListDto::class
         );
     }
 
@@ -164,9 +140,9 @@ class LolStaticDataApi extends RegionApi {
     public function getMastery($id, $masteryData = '', $locale = '', $version = '')
     {
         return $this->getData(
-            ['mastery/{id}', ['id' => $id]],
+            'mastery/' . $id,
             ['masteryData' => $masteryData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'Mastery\\MasteryDto'
+            MasteryDto::class
         );
     }
 
@@ -175,7 +151,7 @@ class LolStaticDataApi extends RegionApi {
      */
     public function getRealm()
     {
-        return $this->getData('realm', array(), $this->classesNamespace . 'Realm\\RealmDto');
+        return $this->getData('realm', [], RealmDto::class);
     }
 
     /**
@@ -189,7 +165,7 @@ class LolStaticDataApi extends RegionApi {
         return $this->getData(
             'rune',
             ['runeListData' => $runeListData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'Rune\\RuneListDto'
+            RuneListDto::class
         );
     }
 
@@ -202,9 +178,10 @@ class LolStaticDataApi extends RegionApi {
      */
     public function getRune($id, $runeData = '', $locale = '', $version = '')
     {
-        return $this->getData(['rune/{id}', ['id' => $id]],
+        return $this->getData(
+            'rune/' . $id,
             ['runeData' => $runeData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'Rune\\RuneDto'
+            RuneDto::class
         );
     }
 
@@ -219,7 +196,7 @@ class LolStaticDataApi extends RegionApi {
         return $this->getData(
             'summoner-spell',
             ['spellData' => $spellData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'SummonerSpell\\SummonerSpellListDto'
+            SummonerSpellListDto::class
         );
     }
 
@@ -233,9 +210,9 @@ class LolStaticDataApi extends RegionApi {
     public function getSummonerSpell($id, $spellData = '', $locale = '', $version = '')
     {
         return $this->getData(
-            ['summoner-spell/{id}', ['id' => $id]],
+            'summoner-spell' . $id,
             ['spellData' => $spellData, 'locale' => $locale, 'version' => $version],
-            $this->classesNamespace . 'SummonerSpell\\SummonerSpellDto'
+            SummonerSpellDto::class
         );
     }
 
@@ -244,6 +221,6 @@ class LolStaticDataApi extends RegionApi {
      */
     public function getVersions()
     {
-        return $this->getData('versions', array(), 'array<string>');
+        return $this->getData('versions', [], 'array<string>');
     }
 }
