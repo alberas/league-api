@@ -4,6 +4,7 @@
 namespace LeagueApi\Match\Classes;
 
 use JMS\Serializer\Annotation as JMS;
+use LeagueApi\Match\Exceptions\ParticipantIdentityNotFound;
 
 class MatchDetail
 {
@@ -245,5 +246,17 @@ class MatchDetail
     public function getTimeline()
     {
         return $this->timeline;
+    }
+    
+    public function getParticipantIdentityForSummoner($summonerId)
+    {
+        foreach ($this->participantIdentities as $participantIdentity)
+        {
+            if ($participantIdentity->getPlayer()->getSummonerId() == $summonerId) {
+                return $participantIdentity;
+            }
+        }
+        
+        throw new ParticipantIdentityNotFound();
     }
 }

@@ -38,4 +38,41 @@ class Timeline
     {
         return $this->frames;
     }
+
+    /**
+     * @param $participantId
+     * @return ParticipantFrame[]
+     */
+    public function getFramesForParticipant($participantId)
+    {
+        return array_map(function(Frame $frame) use ($participantId) {
+            return $frame->getParticipantFrames()[$participantId];
+        }, $this->frames);
+    }
+
+    /**
+     * @param $participantId
+     * @return [Event[]]
+     */
+    public function getEventsForParticipant($participantId)
+    {
+        /**
+         * @var [Event[]] $events
+         */
+        $events = array_map(function(Frame $frame) use ($participantId) {
+
+            $frameEvents = $frame->getEvents();
+
+            if (count($frameEvents) > 0) {
+                return array_filter($frameEvents, function (Event $event) use ($participantId) {
+                    return $event->getParticipantId() == $participantId;
+                });
+            }
+
+            return array();
+
+        }, $this->frames);
+
+        return $events;
+    }
 }

@@ -9,6 +9,11 @@ use LeagueApi\Match\Classes\MatchDetail;
 
 class MatchApi extends Api
 {
+    /**
+     * @param $matchId
+     * @param bool $includeTimeline
+     * @return MatchDetail
+     */
     public function getMatchDetail($matchId, $includeTimeline = false)
     {
         $query = [];
