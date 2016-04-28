@@ -19,8 +19,8 @@ class UriFactory
     {
         $argumentCount = count($arguments);
 
-        if ($argumentCount != 2 && $argumentCount != 0) {
-            throw new \InvalidArgumentException(sprintf('Invalid argument count "%d". Arguments can be none or 2 for the different URIs', $argumentCount));
+        if ($argumentCount != 2 && $argumentCount != 1 && $argumentCount != 0) {
+            throw new \InvalidArgumentException(sprintf('Invalid argument count "%d". Arguments can be none, one or 2 for the different URIs', $argumentCount));
         }
 
         switch ($name)
@@ -39,6 +39,15 @@ class UriFactory
                 break;
             case 'LolStatusApiClientUri':
                 return new Uri('http://status.leagueoflegends.com');
+                break;
+            case 'FeaturedGamesApiClientUri':
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/');
+                break;
+            case 'LeagueApiClientUri':
+                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/league/');
+                break;
+            case 'MatchApiClientUri':
+                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/match/');
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find URI "%s".', $name));

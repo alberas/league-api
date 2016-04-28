@@ -7,10 +7,10 @@ namespace LeagueApi\Api;
 use GuzzleHttp\Client;
 use JMS\Serializer\Serializer;
 
-abstract class Api implements ApiInterface
+abstract class Api
 {
-    private $serializer;
-    private $client;
+    protected $serializer;
+    protected $client;
 
     public function __construct(Serializer $serializer, Client $client)
     {
@@ -24,7 +24,7 @@ abstract class Api implements ApiInterface
      * @param string $dataType
      * @return object
      */
-    public function getData($url, array $query, $dataType)
+    protected function getData($url, array $query, $dataType)
     {
         $defaultQuery = $this->client->getConfig('query');
 
