@@ -247,7 +247,12 @@ class MatchDetail
     {
         return $this->timeline;
     }
-    
+
+    /**
+     * @param $summonerId
+     * @return ParticipantIdentity
+     * @throws ParticipantIdentityNotFound
+     */
     public function getParticipantIdentityForSummoner($summonerId)
     {
         foreach ($this->participantIdentities as $participantIdentity)
