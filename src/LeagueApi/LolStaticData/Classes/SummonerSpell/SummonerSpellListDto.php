@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation as JMS;
 use LeagueApi\Classes\ListDto;
 
 /**
- * Class SummonerSpellListDto
+ * @method SummonerSpellDto[] getData()
  */
 class SummonerSpellListDto extends ListDto {
 

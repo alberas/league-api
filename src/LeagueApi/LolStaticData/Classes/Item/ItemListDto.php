@@ -10,7 +10,7 @@ use LeagueApi\Classes\BasicDataDto;
 use LeagueApi\Classes\ListDto;
 
 /**
- * Class ItemListDto
+ * @method ItemDto[] getData()
  */
 class ItemListDto extends ListDto {
 

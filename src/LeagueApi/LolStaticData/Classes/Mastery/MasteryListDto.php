@@ -9,7 +9,7 @@ use JMS\Serializer\Annotation as JMS;
 use LeagueApi\Classes\ListDto;
 
 /**
- * Class MasteryListDto
+ * @method MasteryDto[] getData()
  */
 class MasteryListDto extends ListDto {
 

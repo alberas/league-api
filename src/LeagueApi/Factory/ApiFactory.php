@@ -40,12 +40,6 @@ class ApiFactory
             return self::$serializer;
         }
 
-        // Register serializer annotations
-        AnnotationRegistry::registerAutoloadNamespace(
-            'JMS\Serializer\Annotation',
-            __DIR__ . "/../../../vendor/jms/serializer/src"
-        );
-
         self::$serializer = SerializerBuilder::create()->build();
 
         return self::$serializer;

@@ -9,13 +9,12 @@ use JMS\Serializer\Annotation as JMS;
 use LeagueApi\Classes\ListDto;
 
 /**
- * Class ChampionListDto
- * @package LeagueApi\LolStaticData\Classes\Champion
+ * @method ChampionDto[] getData()
  */
 class ChampionListDto extends ListDto {
     /**
      * @JMS\Type("array<string, LeagueApi\LolStaticData\Classes\Champion\ChampionDto>")
-     * @var \LeagueApi\LolStaticData\Classes\Champion\ChampionDto[] $data
+     * @var ChampionDto[] $data
      */
     protected $data;
 
