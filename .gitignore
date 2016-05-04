@@ -2,3 +2,4 @@
 /composer.phar
 /vendor
 index.php
+/cache

@@ -264,4 +264,31 @@ class MatchDetail
         
         throw new ParticipantIdentityNotFound();
     }
+
+    public function getSummonerNameForParticipantIdentity(ParticipantIdentity $participantIdentity)
+    {
+        return $participantIdentity->getPlayer()->getSummonerName();
+    }
+
+    public function getSummonerNameForParticipantId($participantId)
+    {
+        return $this->getSummonerNameForParticipantIdentity($this->participantIdentities[$participantId - 1]);
+    }
+
+    public function getSummonerNamesForParticipantIds(array $participantIds)
+    {
+        return array_map(function($id) {
+            return $this->getSummonerNameForParticipantId($id);
+        }, $participantIds);
+    }
+
+    public function getChampionIdForParticipantId($participantId)
+    {
+        return $this->participants[$participantId - 1]->getChampionId();
+    }
+
+    public function getRoleForParticipantId($participantId)
+    {
+        return $this->participants[$participantId - 1]->getTimeline()->getRole();
+    }
 }

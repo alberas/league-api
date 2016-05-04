@@ -342,4 +342,22 @@ class Event
     {
         return $this->wardType;
     }
+
+    public function getMinutes($padWithZero = false)
+    {
+        if ($padWithZero) {
+            return str_pad($this->getMinutes(), 2, '0', STR_PAD_LEFT);
+        }
+
+        return floor($this->getTimestamp() / 1000 / 60);
+    }
+
+    public function getSeconds($padWithZero = false)
+    {
+        if ($padWithZero) {
+            return str_pad($this->getSeconds(), 2, '0', STR_PAD_LEFT);
+        }
+
+        return floor($this->getTimestamp() / 1000 % 60);
+    }
 }

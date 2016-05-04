@@ -6,7 +6,11 @@
 namespace LeagueApi\LolStaticData;
 
 
+use GuzzleHttp\Client;
+use JMS\Serializer\Serializer;
 use LeagueApi\Api\Api;
+use LeagueApi\Api\CacheableApi;
+use LeagueApi\Classes\ListDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionListDto;
 use LeagueApi\LolStaticData\Classes\Item\ItemDto;
@@ -20,8 +24,54 @@ use LeagueApi\LolStaticData\Classes\Rune\RuneDto;
 use LeagueApi\LolStaticData\Classes\Rune\RuneListDto;
 use LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellDto;
 use LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellListDto;
+use LeagueApi\LolStaticData\Exceptions\CacheFileNotFoundException;
 
-class LolStaticDataApi extends Api {
+class LolStaticDataApi extends Api implements CacheableApi {
+
+    private $cacheDirectory;
+
+    public function __construct(Serializer $serializer, Client $client, $cacheDirectory)
+    {
+        parent::__construct($serializer, $client);
+
+        if (!is_dir($cacheDirectory)) {
+            throw new \InvalidArgumentException(sprintf('Invalid cache directory "%s"', $cacheDirectory));
+        }
+
+        $this->cacheDirectory = $cacheDirectory;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    protected function getData($url, array $query, $dataType)
+    {
+        $url = $this->client->getConfig('base_uri') . $url . '?';
+
+        $queryKeyValuesString = [];
+        foreach ($query as $name => $parameter) {
+            $queryKeyValuesString[] = urlencode($name) . '=' . urlencode($parameter);
+        }
+
+        $url .= implode('&', $queryKeyValuesString);
+
+        $filename = md5(base64_encode($url)) . '.serialized';
+
+        try {
+            return $this->read($filename);
+        } catch (CacheFileNotFoundException $e) {
+            $data = parent::getData($url, $query, $dataType);
+
+            if ($data instanceof ListDto) {
+                $this->save($filename, $data);
+            }
+        }
+
+        return $data;
+    }
+
+
     /**
      * @param string $champData
      * @param string $dataById
@@ -222,5 +272,29 @@ class LolStaticDataApi extends Api {
     public function getVersions()
     {
         return $this->getData('versions', [], 'array<string>');
+    }
+
+    public function save($filename, $data)
+    {
+        $result = file_put_contents(rtrim($this->cacheDirectory, '/') . '/' . $filename, serialize($data));
+
+        if ($result === false) {
+            throw new \LogicException(sprintf('Couldn\'t save file to cache. Filename "%s".', $filename));
+        }
+    }
+
+    public function read($filename)
+    {
+        if (!file_exists(rtrim($this->cacheDirectory, '/') . '/' . $filename)) {
+            throw new CacheFileNotFoundException();
+        }
+        
+        $data = file_get_contents(rtrim($this->cacheDirectory, '/') . '/' . $filename);
+
+        if ($data === false) {
+            throw new \LogicException(sprintf('Couldn\'t read file from cache. Filename "%s".', $filename));
+        }
+
+        return unserialize($data);
     }
 }

@@ -19,7 +19,7 @@ use LeagueApi\Summoner\SummonerApi;
 
 /**
  * @method static ChampionApi ChampionApi($apiKey, $region)
- * @method static LolStaticDataApi LolStaticDataApi($apiKey, $region)
+ * @method static LolStaticDataApi LolStaticDataApi($apiKey, $region, $cacheDirectory)
  * @method static GameApi GameApi($apiKey, $region)
  * @method static SummonerApi SummonerApi($apiKey, $region)
  * @method static LolStatusApi LolStatusApi()
@@ -55,8 +55,8 @@ class ApiFactory
     {
         $argumentCount = count($arguments);
 
-        if ($argumentCount != 2 && $argumentCount != 0) {
-            throw new \InvalidArgumentException(sprintf('Invalid argument count "%d". Arguments can be none or 2 for the different APIs', $argumentCount));
+        if ($argumentCount != 3 && $argumentCount != 2 && $argumentCount != 0) {
+            throw new \InvalidArgumentException(sprintf('Invalid argument count "%d". Arguments can be none, two or three for the different APIs', $argumentCount));
         }
 
         switch ($name)
@@ -66,6 +66,7 @@ class ApiFactory
                 $arguments[2] = 'v1.2';
                 break;
             case 'LolStaticDataApi':
+                $cacheDirectory = $arguments[2];
                 $class = LolStaticDataApi::class;
                 $arguments[2] = 'v1.2';
                 break;
@@ -93,6 +94,10 @@ class ApiFactory
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find API "%s".', $name));
+        }
+
+        if ($name == 'LolStaticDataApi') {
+            return new $class(self::getSerializer(), call_user_func([ClientFactory::class, '__callStatic'], $name . 'Client', $arguments), $cacheDirectory);
         }
 
         return new $class(self::getSerializer(), call_user_func([ClientFactory::class, '__callStatic'], $name . 'Client', $arguments));

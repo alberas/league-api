@@ -38,4 +38,26 @@ class Timeline
     {
         return $this->frames;
     }
+
+    /**
+     * Returns events for the specified type foreach frame
+     * @param $type
+     * @return Event[]
+     */
+    public function getEventsByType($type)
+    {
+        $events = [];
+
+        foreach ($this->frames as $frame) {
+            if ($frame->getEvents()) {
+                foreach ($frame->getEvents() as $event) {
+                    if ($event->getEventType() == $type) {
+                        $events[] = $event;
+                    }
+                }
+            }
+        }
+
+        return $events;
+    }
 }
