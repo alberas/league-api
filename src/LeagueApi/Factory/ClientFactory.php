@@ -59,6 +59,9 @@ class ClientFactory
             case 'StatsApiClient':
                 $uriArguments = [$arguments[1], $arguments[2]];
                 break;
+            case 'TeamApiClient':
+                $uriArguments = [$arguments[1], $arguments[2]];
+                break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find client "%s".', $name));
         }

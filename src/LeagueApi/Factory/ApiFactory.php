@@ -18,6 +18,7 @@ use LeagueApi\Match\MatchApi;
 use LeagueApi\MatchList\MatchListApi;
 use LeagueApi\Stats\StatsApi;
 use LeagueApi\Summoner\SummonerApi;
+use LeagueApi\Team\TeamApi;
 
 /**
  * @method static ChampionApi ChampionApi($apiKey, $region)
@@ -30,6 +31,7 @@ use LeagueApi\Summoner\SummonerApi;
  * @method static MatchApi MatchApi($apiKey, $region)
  * @method static MatchListApi MatchListApi($apiKey, $region)
  * @method static StatsApi StatsApi($apiKey, $region)
+ * @method static TeamApi TeamApi($apiKey, $region)
  */
 class ApiFactory
 {
@@ -103,6 +105,10 @@ class ApiFactory
             case 'StatsApi':
                 $class = StatsApi::class;
                 $arguments[2] = 'v1.3';
+                break;
+            case 'TeamApi':
+                $class = TeamApi::class;
+                $arguments[2] = 'v2.4';
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find API "%s".', $name));

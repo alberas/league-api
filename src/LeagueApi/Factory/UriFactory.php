@@ -55,6 +55,9 @@ class UriFactory
             case 'StatsApiClientUri':
                 return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/stats/');
                 break;
+            case 'TeamApiClientUri':
+                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/team/');
+                break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find URI "%s".', $name));
         }
