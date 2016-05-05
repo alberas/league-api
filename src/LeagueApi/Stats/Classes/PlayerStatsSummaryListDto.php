@@ -32,7 +32,7 @@ class PlayerStatsSummaryListDto
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getSummonerId()
     {

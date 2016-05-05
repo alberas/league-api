@@ -56,7 +56,7 @@ class PlayerStatsSummaryDto
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getLosses()
     {
@@ -64,7 +64,7 @@ class PlayerStatsSummaryDto
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getModifyDate()
     {
@@ -80,7 +80,7 @@ class PlayerStatsSummaryDto
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getWins()
     {

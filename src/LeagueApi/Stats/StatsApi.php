@@ -31,7 +31,7 @@ class StatsApi extends Api
      * @param string $season
      * @return PlayerStatsSummaryListDto
      */
-    public function getStatSummaries($summonerId, $season = null)
+    public function getStatsSummaries($summonerId, $season = null)
     {
         $query = [];
 

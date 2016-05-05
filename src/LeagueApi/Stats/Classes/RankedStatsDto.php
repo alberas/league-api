@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation as JMS;
 class RankedStatsDto
 {
     /**
-     * @JMS\Type("array<ChampionStatsDto>")
+     * @JMS\Type("array<LeagueApi\Stats\Classes\ChampionStatsDto>")
      * @JMS\SerializedName("champions")
      * @var ChampionStatsDto[] $champions
      * Collection of aggregated stats summarized by champion.
@@ -40,7 +40,7 @@ class RankedStatsDto
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getModifyDate()
     {
@@ -48,7 +48,7 @@ class RankedStatsDto
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getSummonerId()
     {
