@@ -9,6 +9,7 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use LeagueApi\Api\Api;
 use LeagueApi\Champion\ChampionApi;
+use LeagueApi\ChampionMastery\ChampionMasteryApi;
 use LeagueApi\FeaturedGames\FeaturedGamesApi;
 use LeagueApi\Game\GameApi;
 use LeagueApi\League\LeagueApi;
@@ -32,6 +33,7 @@ use LeagueApi\Team\TeamApi;
  * @method static MatchListApi MatchListApi($apiKey, $region)
  * @method static StatsApi StatsApi($apiKey, $region)
  * @method static TeamApi TeamApi($apiKey, $region)
+ * @method static ChampionMasteryApi ChampionMasteryApi($apiKey, $platformId)
  */
 class ApiFactory
 {
@@ -110,11 +112,14 @@ class ApiFactory
                 $class = TeamApi::class;
                 $arguments[2] = 'v2.4';
                 break;
+            case 'ChampionMasteryApi':
+                $class = ChampionMasteryApi::class;
+                break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find API "%s".', $name));
         }
 
-        if ($name == 'LolStaticDataApi') {
+        if (isset($cacheDirectory)) {
             return new $class(self::getSerializer(), call_user_func([ClientFactory::class, '__callStatic'], $name . 'Client', $arguments), $cacheDirectory);
         }
 

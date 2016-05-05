@@ -58,6 +58,9 @@ class UriFactory
             case 'TeamApiClientUri':
                 return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/team/');
                 break;
+            case 'ChampionMasteryApiClientUri':
+                return new Uri('https://global.api.pvp.net/championmastery/location/' . $arguments[0] . '/');
+                break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find URI "%s".', $name));
         }

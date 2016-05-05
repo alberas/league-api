@@ -9,11 +9,19 @@ use LeagueApi\Team\Classes\TeamDto;
 
 class TeamApi extends Api
 {
+    /**
+     * @param array $summonerIds
+     * @return TeamDto
+     */
     public function getTeamBySummoners(array $summonerIds)
     {
         return $this->getData('by-summoner/' . implode(',', $summonerIds), [], 'array<string, array<' . TeamDto::class . '>>');
     }
 
+    /**
+     * @param array $teamIds
+     * @return TeamDto
+     */
     public function getTeams(array $teamIds)
     {
         return $this->getData(implode(',', $teamIds), [], 'array<string,' . TeamDto::class . '>');
