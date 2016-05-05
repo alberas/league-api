@@ -26,16 +26,16 @@ class UriFactory
         switch ($name)
         {
             case 'ChampionApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/');
                 break;
             case 'LolStaticDataApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/static-data/' . $arguments[0] . '/' . $arguments[1] . '/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/static-data/' . $arguments[0] . '/' . $arguments[1] . '/');
                 break;
             case 'GameApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/game/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/game/');
                 break;
             case 'SummonerApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/summoner/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/summoner/');
                 break;
             case 'LolStatusApiClientUri':
                 return new Uri('http://status.leagueoflegends.com');
@@ -44,22 +44,25 @@ class UriFactory
                 return new Uri('https://' . $arguments[0] . '.api.pvp.net/');
                 break;
             case 'LeagueApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/league/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/league/');
                 break;
             case 'MatchApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/match/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/match/');
                 break;
             case 'MatchListApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/matchlist/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/matchlist/');
                 break;
             case 'StatsApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/stats/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/stats/');
                 break;
             case 'TeamApiClientUri':
-                return new Uri('https://global.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/team/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/team/');
                 break;
             case 'ChampionMasteryApiClientUri':
-                return new Uri('https://global.api.pvp.net/championmastery/location/' . $arguments[0] . '/');
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/championmastery/location/' . $arguments[1] . '/');
+                break;
+            case 'CurrentGameApiClientUri':
+                return new Uri('https://' . $arguments[0] . '.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/' . $arguments[1] . '/');
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find URI "%s".', $name));

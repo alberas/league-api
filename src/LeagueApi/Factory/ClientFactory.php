@@ -29,41 +29,26 @@ class ClientFactory
 
         switch ($name)
         {
-            case 'ChampionApiClient':
-                $uriArguments = [$arguments[1], $arguments[2]];
-                break;
-            case 'LolStaticDataApiClient':
-                $uriArguments = [$arguments[1], $arguments[2]];
-                break;
-            case 'GameApiClient':
-                $uriArguments = [$arguments[1], $arguments[2]];
-                break;
-            case 'SummonerApiClient':
-                $uriArguments = [$arguments[1], $arguments[2]];
-                break;
             case 'LolStatusApiClient':
                 $arguments[0] = false;
                 break;
             case 'FeaturedGamesApiClient':
                 $uriArguments = [$arguments[1]];
                 break;
+            case 'ChampionMasteryApiClient':
+            case 'CurrentGameApiClient':
+                $uriArguments = [$arguments[1], $arguments[2]];
+                break;
+            case 'ChampionApiClient':
+            case 'LolStaticDataApiClient':
+            case 'GameApiClient':
+            case 'SummonerApiClient':
             case 'LeagueApiClient':
-                $uriArguments = [$arguments[1], $arguments[2]];
-                break;
             case 'MatchApiClient':
-                $uriArguments = [$arguments[1], $arguments[2]];
-                break;
             case 'MatchListApiClient':
-                $uriArguments = [$arguments[1], $arguments[2]];
-                break;
             case 'StatsApiClient':
-                $uriArguments = [$arguments[1], $arguments[2]];
-                break;
             case 'TeamApiClient':
                 $uriArguments = [$arguments[1], $arguments[2]];
-                break;
-            case 'ChampionMasteryApiClient':
-                $uriArguments = [$arguments[1]];
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find client "%s".', $name));

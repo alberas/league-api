@@ -10,6 +10,7 @@ use JMS\Serializer\SerializerBuilder;
 use LeagueApi\Api\Api;
 use LeagueApi\Champion\ChampionApi;
 use LeagueApi\ChampionMastery\ChampionMasteryApi;
+use LeagueApi\CurrentGame\CurrentGameApi;
 use LeagueApi\FeaturedGames\FeaturedGamesApi;
 use LeagueApi\Game\GameApi;
 use LeagueApi\League\LeagueApi;
@@ -33,7 +34,8 @@ use LeagueApi\Team\TeamApi;
  * @method static MatchListApi MatchListApi($apiKey, $region)
  * @method static StatsApi StatsApi($apiKey, $region)
  * @method static TeamApi TeamApi($apiKey, $region)
- * @method static ChampionMasteryApi ChampionMasteryApi($apiKey, $platformId)
+ * @method static ChampionMasteryApi ChampionMasteryApi($apiKey, $region, $platformId)
+ * @method static CurrentGameApi CurrentGameApi($apiKey, $region, $platformId)
  */
 class ApiFactory
 {
@@ -114,6 +116,9 @@ class ApiFactory
                 break;
             case 'ChampionMasteryApi':
                 $class = ChampionMasteryApi::class;
+                break;
+            case 'CurrentGameApi':
+                $class = CurrentGameApi::class;
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find API "%s".', $name));
