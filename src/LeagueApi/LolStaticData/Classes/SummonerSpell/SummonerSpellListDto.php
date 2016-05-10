@@ -9,7 +9,8 @@ use LeagueApi\Classes\ListDto;
 /**
  * @method SummonerSpellDto[] getData()
  */
-class SummonerSpellListDto extends ListDto {
+class SummonerSpellListDto extends ListDto
+{
 
     /**
      * @JMS\Type("array<string, LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellDto>")

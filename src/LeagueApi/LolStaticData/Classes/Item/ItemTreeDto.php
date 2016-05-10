@@ -9,7 +9,8 @@ use JMS\Serializer\Annotation as JMS;
  * Class ItemTreeDto
  * @package Api\LolStaticData\Item
  */
-class ItemTreeDto {
+class ItemTreeDto
+{
 
     /**
      * @JMS\Type("string")

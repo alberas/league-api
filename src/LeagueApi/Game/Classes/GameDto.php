@@ -9,7 +9,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class GameDto
  */
-class GameDto {
+class GameDto
+{
 
     /**
      * @JMS\Type("integer")

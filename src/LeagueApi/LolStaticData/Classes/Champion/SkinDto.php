@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class SkinDto
  */
-class SkinDto {
+class SkinDto
+{
     /**
      * @JMS\Type("integer")
      * @var integer $id

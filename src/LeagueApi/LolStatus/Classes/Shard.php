@@ -5,7 +5,8 @@ namespace LeagueApi\LolStatus\Classes;
 
 use JMS\Serializer\Annotation as JMS;
 
-class Shard {
+class Shard
+{
     /**
      * @JMS\Type("string")
      * @var string $hostname

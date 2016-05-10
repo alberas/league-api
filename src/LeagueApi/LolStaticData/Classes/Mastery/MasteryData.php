@@ -4,7 +4,8 @@
 namespace LeagueApi\LolStaticData\Classes\Mastery;
 
 
-class MasteryData {
+class MasteryData
+{
     const ALL = 'all';
     const IMAGE = 'image';
     const PRE_REQ = 'prereq';

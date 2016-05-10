@@ -13,21 +13,21 @@ class TeamStatDetailDto
      * @var integer $averageGamesPlayed
      */
     private $averageGamesPlayed;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("losses")
      * @var integer $losses
      */
     private $losses;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("teamStatType")
      * @var string $teamStatType
      */
     private $teamStatType;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("wins")

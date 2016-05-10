@@ -68,8 +68,7 @@ class ApiFactory
             throw new \InvalidArgumentException(sprintf('Invalid argument count "%d". Arguments can be none, two or three for the different APIs', $argumentCount));
         }
 
-        switch ($name)
-        {
+        switch ($name) {
             case 'ChampionApi':
                 $class = ChampionApi::class;
                 $arguments[2] = 'v1.2';

@@ -13,7 +13,7 @@ class MatchHistorySummaryDto
      * @var integer $assists
      */
     private $assists;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("date")
@@ -21,63 +21,63 @@ class MatchHistorySummaryDto
      * Date that match was completed specified as epoch milliseconds.
      */
     private $date;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("deaths")
      * @var integer $deaths
      */
     private $deaths;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("gameId")
      * @var integer $gameId
      */
     private $gameId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("gameMode")
      * @var string $gameMode
      */
     private $gameMode;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("invalid")
      * @var boolean $invalid
      */
     private $invalid;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("kills")
      * @var integer $kills
      */
     private $kills;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("mapId")
      * @var integer $mapId
      */
     private $mapId;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("opposingTeamKills")
      * @var integer $opposingTeamKills
      */
     private $opposingTeamKills;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("opposingTeamName")
      * @var string $opposingTeamName
      */
     private $opposingTeamName;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("win")

@@ -14,7 +14,7 @@ class Rune
      * Rune rank
      */
     private $rank;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("runeId")

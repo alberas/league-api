@@ -5,7 +5,8 @@ namespace LeagueApi\LolStatus\Classes;
 
 use JMS\Serializer\Annotation as JMS;
 
-class Incident {
+class Incident
+{
     /**
      * @JMS\Type("boolean")
      * @var boolean $active

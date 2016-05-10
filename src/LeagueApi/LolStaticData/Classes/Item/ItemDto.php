@@ -6,7 +6,8 @@ namespace LeagueApi\LolStaticData\Classes\Item;
 use JMS\Serializer\Annotation as JMS;
 use LeagueApi\Classes\BasicDataDto;
 
-class ItemDto extends BasicDataDto {
+class ItemDto extends BasicDataDto
+{
     /**
      * @JMS\Type("array<string, string>")
      * @var array $effect

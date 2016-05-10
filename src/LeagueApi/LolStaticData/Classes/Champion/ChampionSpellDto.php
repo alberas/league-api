@@ -10,7 +10,8 @@ use LeagueApi\Classes\Spell;
 /**
  * Class ChampionSpellDto
  */
-class ChampionSpellDto extends Spell{
+class ChampionSpellDto extends Spell
+{
     /**
      * @JMS\Type("array<LeagueApi\Classes\ImageDto>")
      * @var ImageDto[] $altimages

@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class BlockItemDto
  */
-class BlockItemDto {
+class BlockItemDto
+{
     /**
      * @JMS\Type("integer")
      * @var integer $count

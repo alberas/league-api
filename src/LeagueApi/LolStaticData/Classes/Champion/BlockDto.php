@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class BlockDto
  */
-class BlockDto {
+class BlockDto
+{
     /**
      * @JMS\Type("array<LeagueApi\LolStaticData\Classes\Champion\BlockItemDto>")
      * @var \LeagueApi\LolStaticData\Classes\Champion\BlockItemDto[] $items

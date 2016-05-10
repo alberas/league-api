@@ -21,14 +21,13 @@ class ClientFactory
     {
         $argumentCount = count($arguments);
 
-        if ($argumentCount != 3 && $argumentCount !=2 && $argumentCount != 0) {
+        if ($argumentCount != 3 && $argumentCount != 2 && $argumentCount != 0) {
             throw new \InvalidArgumentException(sprintf('Invalid argument count "%d". Arguments can be none or 3 for the different Clients', $argumentCount));
         }
 
         $uriArguments = [];
 
-        switch ($name)
-        {
+        switch ($name) {
             case 'LolStatusApiClient':
                 $arguments[0] = false;
                 break;
@@ -53,7 +52,7 @@ class ClientFactory
             default:
                 throw new \InvalidArgumentException(sprintf('Unable to find client "%s".', $name));
         }
-        
+
         return self::createClient(call_user_func([UriFactory::class, '__callStatic'], $name . 'Uri', $uriArguments), $arguments[0]);
     }
 

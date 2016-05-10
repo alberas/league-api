@@ -9,7 +9,8 @@ use LeagueApi\Classes\ImageDto;
 /**
  * Class ChampionDto
  */
-class ChampionDto {
+class ChampionDto
+{
     /**
      * @JMS\Type("array<string>")
      * @var array $allyTips

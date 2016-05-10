@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class MasteryTreeDto
  */
-class MasteryTreeDto {
+class MasteryTreeDto
+{
 
     /**
      * @JMS\Type("array<LeagueApi\LolStaticData\Classes\Mastery\MasteryTreeListDto>")

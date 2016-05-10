@@ -4,7 +4,8 @@
 namespace LeagueApi\LolStaticData\Classes\Item;
 
 
-class ItemData {
+class ItemData
+{
     const ALL = 'all';
     const COLLOQ = 'colloq';
     const CONSUME_ON_FULL = 'consumeOnFull';

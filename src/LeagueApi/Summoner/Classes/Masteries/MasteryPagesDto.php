@@ -11,7 +11,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class MasteryPagesDto
  */
-class MasteryPagesDto{
+class MasteryPagesDto
+{
     /**
      * @JMS\Type("array<LeagueApi\Summoner\Classes\Masteries\MasteryPageDto>")
      * Collection of mastery pages associated with the summoner.

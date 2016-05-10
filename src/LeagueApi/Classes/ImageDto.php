@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class ImageDto
  */
-class ImageDto {
+class ImageDto
+{
     /**
      * @JMS\Type("string")
      * @var string $full

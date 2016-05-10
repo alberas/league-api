@@ -14,7 +14,7 @@ class ParticipantIdentity
      * Participant ID
      */
     private $participantId;
-    
+
     /**
      * @JMS\Type("LeagueApi\Match\Classes\Player")
      * @JMS\SerializedName("player")

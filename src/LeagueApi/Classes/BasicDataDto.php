@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class BasicDataDto
  */
-class BasicDataDto {
+class BasicDataDto
+{
 
     /**
      * @JMS\Type("string")

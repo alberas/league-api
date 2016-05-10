@@ -4,7 +4,8 @@
 namespace LeagueApi\LolStaticData\Classes\SummonerSpell;
 
 
-class SpellData {
+class SpellData
+{
     const ALL = 'all';
     const COOLDOWN = 'cooldown';
     const COOLDOWN_BURN = 'cooldownBurn';

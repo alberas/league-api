@@ -10,7 +10,8 @@ use LeagueApi\Classes\ListDto;
 /**
  * @method ItemDto[] getData()
  */
-class ItemListDto extends ListDto {
+class ItemListDto extends ListDto
+{
 
     /**
      * @JMS\Type("LeagueApi\Classes\BasicDataDto")

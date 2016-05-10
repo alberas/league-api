@@ -5,7 +5,8 @@ namespace LeagueApi\Classes;
 
 use JMS\Serializer\Annotation as JMS;
 
-class ListDto {
+class ListDto
+{
     /**
      * @JMS\Type("array<string, string>")
      * @var array $data

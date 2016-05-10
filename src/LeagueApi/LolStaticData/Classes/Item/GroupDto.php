@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class GroupDto
  */
-class GroupDto {
+class GroupDto
+{
 
     /**
      * @JMS\Type("string")

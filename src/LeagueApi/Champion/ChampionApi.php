@@ -8,7 +8,8 @@ use LeagueApi\Api\Api;
 use LeagueApi\Champion\Classes\ChampionDto;
 use LeagueApi\Champion\Classes\ChampionListDto;
 
-class ChampionApi extends Api{
+class ChampionApi extends Api
+{
 
     /**
      * @param boolean $freeToPlay Optional filter param to retrieve only free to play champions.

@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class SpellVarsDto
  */
-class SpellVarsDto {
+class SpellVarsDto
+{
     /**
      * @JMS\Type("array<double>")
      * @var double[] $coeff

@@ -14,7 +14,7 @@ class MiniSeriesDto
      * Number of current losses in the mini series.
      */
     private $losses;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("progress")
@@ -30,7 +30,7 @@ class MiniSeriesDto
      * Number of wins required for promotion.
      */
     private $target;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("wins")

@@ -5,7 +5,8 @@ namespace LeagueApi\LolStatus\Classes;
 
 use JMS\Serializer\Annotation as JMS;
 
-class Translation {
+class Translation
+{
     /**
      * @JMS\Type("string")
      * @var string $content

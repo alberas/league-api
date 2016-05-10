@@ -14,7 +14,7 @@ class ParticipantStats
      * Number of assists
      */
     private $assists;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("champLevel")
@@ -22,7 +22,7 @@ class ParticipantStats
      * Champion level achieved
      */
     private $champLevel;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("combatPlayerScore")
@@ -30,7 +30,7 @@ class ParticipantStats
      * If game was a dominion game, player's combat score, otherwise 0
      */
     private $combatPlayerScore;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("deaths")
@@ -38,7 +38,7 @@ class ParticipantStats
      * Number of deaths
      */
     private $deaths;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("doubleKills")
@@ -46,7 +46,7 @@ class ParticipantStats
      * Number of double kills
      */
     private $doubleKills;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("firstBloodAssist")
@@ -54,7 +54,7 @@ class ParticipantStats
      * Flag indicating if participant got an assist on first blood
      */
     private $firstBloodAssist;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("firstBloodKill")
@@ -62,7 +62,7 @@ class ParticipantStats
      * Flag indicating if participant got first blood
      */
     private $firstBloodKill;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("firstInhibitorAssist")
@@ -70,7 +70,7 @@ class ParticipantStats
      * Flag indicating if participant got an assist on the first inhibitor
      */
     private $firstInhibitorAssist;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("firstInhibitorKill")
@@ -78,7 +78,7 @@ class ParticipantStats
      * Flag indicating if participant destroyed the first inhibitor
      */
     private $firstInhibitorKill;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("firstTowerAssist")
@@ -86,7 +86,7 @@ class ParticipantStats
      * Flag indicating if participant got an assist on the first tower
      */
     private $firstTowerAssist;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("firstTowerKill")
@@ -94,7 +94,7 @@ class ParticipantStats
      * Flag indicating if participant destroyed the first tower
      */
     private $firstTowerKill;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("goldEarned")
@@ -102,7 +102,7 @@ class ParticipantStats
      * Gold earned
      */
     private $goldEarned;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("goldSpent")
@@ -110,7 +110,7 @@ class ParticipantStats
      * Gold spent
      */
     private $goldSpent;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("inhibitorKills")
@@ -118,7 +118,7 @@ class ParticipantStats
      * Number of inhibitor kills
      */
     private $inhibitorKills;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("item0")
@@ -126,7 +126,7 @@ class ParticipantStats
      * First item ID
      */
     private $item0;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("item1")
@@ -134,7 +134,7 @@ class ParticipantStats
      * Second item ID
      */
     private $item1;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("item2")
@@ -142,7 +142,7 @@ class ParticipantStats
      * Third item ID
      */
     private $item2;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("item3")
@@ -150,7 +150,7 @@ class ParticipantStats
      * Fourth item ID
      */
     private $item3;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("item4")
@@ -158,7 +158,7 @@ class ParticipantStats
      * Fifth item ID
      */
     private $item4;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("item5")
@@ -166,7 +166,7 @@ class ParticipantStats
      * Sixth item ID
      */
     private $item5;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("item6")
@@ -174,7 +174,7 @@ class ParticipantStats
      * Seventh item ID
      */
     private $item6;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("killingSprees")
@@ -182,7 +182,7 @@ class ParticipantStats
      * Number of killing sprees
      */
     private $killingSprees;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("kills")
@@ -190,7 +190,7 @@ class ParticipantStats
      * Number of kills
      */
     private $kills;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("largestCriticalStrike")
@@ -198,7 +198,7 @@ class ParticipantStats
      * Largest critical strike
      */
     private $largestCriticalStrike;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("largestKillingSpree")
@@ -206,7 +206,7 @@ class ParticipantStats
      * Largest killing spree
      */
     private $largestKillingSpree;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("largestMultiKill")
@@ -214,7 +214,7 @@ class ParticipantStats
      * Largest multi kill
      */
     private $largestMultiKill;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("magicDamageDealt")
@@ -222,7 +222,7 @@ class ParticipantStats
      * Magical damage dealt
      */
     private $magicDamageDealt;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("magicDamageDealtToChampions")
@@ -230,7 +230,7 @@ class ParticipantStats
      * Magical damage dealt to champions
      */
     private $magicDamageDealtToChampions;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("magicDamageTaken")
@@ -238,7 +238,7 @@ class ParticipantStats
      * Magic damage taken
      */
     private $magicDamageTaken;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("minionsKilled")
@@ -246,7 +246,7 @@ class ParticipantStats
      * Minions killed
      */
     private $minionsKilled;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("neutralMinionsKilled")
@@ -254,7 +254,7 @@ class ParticipantStats
      * Neutral minions killed
      */
     private $neutralMinionsKilled;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("neutralMinionsKilledEnemyJungle")
@@ -262,7 +262,7 @@ class ParticipantStats
      * Neutral jungle minions killed in the enemy team's jungle
      */
     private $neutralMinionsKilledEnemyJungle;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("neutralMinionsKilledTeamJungle")
@@ -270,7 +270,7 @@ class ParticipantStats
      * Neutral jungle minions killed in your team's jungle
      */
     private $neutralMinionsKilledTeamJungle;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("nodeCapture")
@@ -278,7 +278,7 @@ class ParticipantStats
      * If game was a dominion game, number of node captures
      */
     private $nodeCapture;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("nodeCaptureAssist")
@@ -286,7 +286,7 @@ class ParticipantStats
      * If game was a dominion game, number of node capture assists
      */
     private $nodeCaptureAssist;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("nodeNeutralize")
@@ -294,7 +294,7 @@ class ParticipantStats
      * If game was a dominion game, number of node neutralizations
      */
     private $nodeNeutralize;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("nodeNeutralizeAssist")
@@ -302,7 +302,7 @@ class ParticipantStats
      * If game was a dominion game, number of node neutralization assists
      */
     private $nodeNeutralizeAssist;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("objectivePlayerScore")
@@ -310,7 +310,7 @@ class ParticipantStats
      * If game was a dominion game, player's objectives score, otherwise 0
      */
     private $objectivePlayerScore;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("pentaKills")
@@ -318,7 +318,7 @@ class ParticipantStats
      * Number of penta kills
      */
     private $pentaKills;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("physicalDamageDealt")
@@ -326,7 +326,7 @@ class ParticipantStats
      * Physical damage dealt
      */
     private $physicalDamageDealt;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("physicalDamageDealtToChampions")
@@ -334,7 +334,7 @@ class ParticipantStats
      * Physical damage dealt to champions
      */
     private $physicalDamageDealtToChampions;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("physicalDamageTaken")
@@ -342,7 +342,7 @@ class ParticipantStats
      * Physical damage taken
      */
     private $physicalDamageTaken;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("quadraKills")
@@ -350,7 +350,7 @@ class ParticipantStats
      * Number of quadra kills
      */
     private $quadraKills;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("sightWardsBoughtInGame")
@@ -358,7 +358,7 @@ class ParticipantStats
      * Sight wards purchased
      */
     private $sightWardsBoughtInGame;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("teamObjective")
@@ -366,7 +366,7 @@ class ParticipantStats
      * If game was a dominion game, number of completed team objectives (i.e., quests)
      */
     private $teamObjective;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("totalDamageDealt")
@@ -374,7 +374,7 @@ class ParticipantStats
      * Total damage dealt
      */
     private $totalDamageDealt;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("totalDamageDealtToChampions")
@@ -382,7 +382,7 @@ class ParticipantStats
      * Total damage dealt to champions
      */
     private $totalDamageDealtToChampions;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("totalDamageTaken")
@@ -390,7 +390,7 @@ class ParticipantStats
      * Total damage taken
      */
     private $totalDamageTaken;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("totalHeal")
@@ -398,7 +398,7 @@ class ParticipantStats
      * Total heal amount
      */
     private $totalHeal;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("totalPlayerScore")
@@ -406,7 +406,7 @@ class ParticipantStats
      * If game was a dominion game, player's total score, otherwise 0
      */
     private $totalPlayerScore;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("totalScoreRank")
@@ -414,7 +414,7 @@ class ParticipantStats
      * If game was a dominion game, team rank of the player's total score (e.g., 1-5)
      */
     private $totalScoreRank;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("totalTimeCrowdControlDealt")
@@ -422,7 +422,7 @@ class ParticipantStats
      * Total dealt crowd control time
      */
     private $totalTimeCrowdControlDealt;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("totalUnitsHealed")
@@ -430,7 +430,7 @@ class ParticipantStats
      * Total units healed
      */
     private $totalUnitsHealed;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("towerKills")
@@ -438,7 +438,7 @@ class ParticipantStats
      * Number of tower kills
      */
     private $towerKills;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("tripleKills")
@@ -446,7 +446,7 @@ class ParticipantStats
      * Number of triple kills
      */
     private $tripleKills;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("trueDamageDealt")
@@ -454,7 +454,7 @@ class ParticipantStats
      * True damage dealt
      */
     private $trueDamageDealt;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("trueDamageDealtToChampions")
@@ -462,7 +462,7 @@ class ParticipantStats
      * True damage dealt to champions
      */
     private $trueDamageDealtToChampions;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("trueDamageTaken")
@@ -470,7 +470,7 @@ class ParticipantStats
      * True damage taken
      */
     private $trueDamageTaken;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("unrealKills")
@@ -478,7 +478,7 @@ class ParticipantStats
      * Number of unreal kills
      */
     private $unrealKills;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("visionWardsBoughtInGame")
@@ -486,7 +486,7 @@ class ParticipantStats
      * Vision wards purchased
      */
     private $visionWardsBoughtInGame;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("wardsKilled")
@@ -494,7 +494,7 @@ class ParticipantStats
      * Number of wards killed
      */
     private $wardsKilled;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("wardsPlaced")
@@ -502,7 +502,7 @@ class ParticipantStats
      * Number of wards placed
      */
     private $wardsPlaced;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("winner")

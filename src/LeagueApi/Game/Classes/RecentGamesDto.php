@@ -9,7 +9,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class RecentGamesDto
  */
-class RecentGamesDto {
+class RecentGamesDto
+{
 
     /**
      * @JMS\Type("array<LeagueApi\Game\Classes\GameDto>")

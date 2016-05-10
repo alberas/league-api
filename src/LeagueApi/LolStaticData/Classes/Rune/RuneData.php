@@ -4,7 +4,8 @@
 namespace LeagueApi\LolStaticData\Classes\Rune;
 
 
-class RuneData {
+class RuneData
+{
     const ALL = 'all';
     const BASIC = 'basic';
     const COLLOQ = 'colloq';

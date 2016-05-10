@@ -14,7 +14,7 @@ class LeagueEntryDto
      * The league division of the participant.
      */
     private $division;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("isFreshBlood")
@@ -22,7 +22,7 @@ class LeagueEntryDto
      * Specifies if the participant is fresh blood.
      */
     private $isFreshBlood;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("isHotStreak")
@@ -30,7 +30,7 @@ class LeagueEntryDto
      * Specifies if the participant is on a hot streak.
      */
     private $isHotStreak;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("isInactive")
@@ -38,7 +38,7 @@ class LeagueEntryDto
      * Specifies if the participant is inactive.
      */
     private $isInactive;
-    
+
     /**
      * @JMS\Type("boolean")
      * @JMS\SerializedName("isVeteran")
@@ -46,7 +46,7 @@ class LeagueEntryDto
      * Specifies if the participant is a veteran.
      */
     private $isVeteran;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("leaguePoints")
@@ -54,7 +54,7 @@ class LeagueEntryDto
      * The league points of the participant.
      */
     private $leaguePoints;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("losses")
@@ -62,7 +62,7 @@ class LeagueEntryDto
      * The number of losses for the participant.
      */
     private $losses;
-    
+
     /**
      * @JMS\Type("LeagueApi\League\Classes\MiniSeriesDto")
      * @JMS\SerializedName("miniSeries")
@@ -78,7 +78,7 @@ class LeagueEntryDto
      * The ID of the participant (i.e., summoner or team) represented by this entry.
      */
     private $playerOrTeamId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("playerOrTeamName")
@@ -86,7 +86,7 @@ class LeagueEntryDto
      * The name of the the participant (i.e., summoner or team) represented by this entry.
      */
     private $playerOrTeamName;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("wins")

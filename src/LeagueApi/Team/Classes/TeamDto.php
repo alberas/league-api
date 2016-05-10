@@ -14,14 +14,14 @@ class TeamDto
      * Date that team was created specified as epoch milliseconds.
      */
     private $createDate;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("fullId")
      * @var string $fullId
      */
     private $fullId;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("lastGameDate")
@@ -29,7 +29,7 @@ class TeamDto
      * Date that last game played by team ended specified as epoch milliseconds.
      */
     private $lastGameDate;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("lastJoinDate")
@@ -37,7 +37,7 @@ class TeamDto
      * Date that last member joined specified as epoch milliseconds.
      */
     private $lastJoinDate;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("lastJoinedRankedTeamQueueDate")
@@ -45,14 +45,14 @@ class TeamDto
      * Date that team last joined the ranked team queue specified as epoch milliseconds.
      */
     private $lastJoinedRankedTeamQueueDate;
-    
+
     /**
      * @JMS\Type("array<LeagueApi\Team\Classes\MatchHistorySummaryDto>")
      * @JMS\SerializedName("matchHistory")
      * @var MatchHistorySummaryDto[] $matchHistory
      */
     private $matchHistory;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("modifyDate")
@@ -60,21 +60,21 @@ class TeamDto
      * Date that team was last modified specified as epoch milliseconds.
      */
     private $modifyDate;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
      * @var string $name
      */
     private $name;
-    
+
     /**
      * @JMS\Type("LeagueApi\Team\Classes\RosterDto")
      * @JMS\SerializedName("roster")
      * @var RosterDto $roster
      */
     private $roster;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("secondLastJoinDate")
@@ -82,28 +82,28 @@ class TeamDto
      * Date that second to last member joined specified as epoch milliseconds.
      */
     private $secondLastJoinDate;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("status")
      * @var string $status
      */
     private $status;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("tag")
      * @var string $tag
      */
     private $tag;
-    
+
     /**
      * @JMS\Type("array<LeagueApi\Team\Classes\TeamStatDetailDto>")
      * @JMS\SerializedName("teamStatDetails")
      * @var TeamStatDetailDto[] $teamStatDetails
      */
     private $teamStatDetails;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("thirdLastJoinDate")

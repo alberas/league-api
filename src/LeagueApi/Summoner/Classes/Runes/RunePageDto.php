@@ -11,7 +11,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class RunePageDto
  */
-class RunePageDto {
+class RunePageDto
+{
     /**
      * @JMS\Type("boolean")
      * @var boolean $current

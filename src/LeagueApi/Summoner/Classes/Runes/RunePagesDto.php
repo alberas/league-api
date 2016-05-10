@@ -11,7 +11,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class RunePagesDto
  */
-class RunePagesDto{
+class RunePagesDto
+{
     /**
      * @JMS\Type("array<LeagueApi\Summoner\Classes\Runes\RunePageDto>")
      * Collection of rune pages associated with the summoner.

@@ -5,7 +5,8 @@ namespace LeagueApi\LolStatus\Classes;
 
 use JMS\Serializer\Annotation as JMS;
 
-class Service {
+class Service
+{
     /**
      * @JMS\Type("array<LeagueApi\LolStatus\Classes\Incident>")
      * @var \LeagueApi\LolStatus\Classes\Incident[] $incidents

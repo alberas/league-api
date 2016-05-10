@@ -4,7 +4,7 @@
 namespace LeagueApi\Api;
 
 
-interface CacheableApi
+interface CacheableApiInterface
 {
     public function save($filename, $data);
 

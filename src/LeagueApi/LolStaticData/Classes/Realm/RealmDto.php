@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class RealmDto
  */
-class RealmDto {
+class RealmDto
+{
     /**
      * @JMS\Type("string")
      * @var string $cdn

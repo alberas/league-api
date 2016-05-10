@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class LevelTipDto
  */
-class LevelTipDto {
+class LevelTipDto
+{
     /**
      * @JMS\Type("array<string>")
      * @var string[] $effect

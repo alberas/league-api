@@ -9,7 +9,8 @@ use LeagueApi\Classes\ImageDto;
 /**
  * Class MasteryDto
  */
-class MasteryDto {
+class MasteryDto
+{
 
     /**
      * @JMS\Type("array<string>")

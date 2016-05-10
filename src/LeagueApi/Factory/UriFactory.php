@@ -23,8 +23,7 @@ class UriFactory
             throw new \InvalidArgumentException(sprintf('Invalid argument count "%d". Arguments can be none, one or 2 for the different URIs', $argumentCount));
         }
 
-        switch ($name)
-        {
+        switch ($name) {
             case 'ChampionApiClientUri':
                 return new Uri('https://' . $arguments[0] . '.api.pvp.net/api/lol/' . $arguments[0] . '/' . $arguments[1] . '/');
                 break;

@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class MasteryTreeItemDto
  */
-class MasteryTreeItemDto {
+class MasteryTreeItemDto
+{
 
     /**
      * @JMS\Type("string")

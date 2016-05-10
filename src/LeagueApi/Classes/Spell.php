@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class Spell
  */
-abstract class Spell {
+abstract class Spell
+{
     /**
      * @JMS\Type("array<double>")
      * @var double[] $cooldown

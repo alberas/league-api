@@ -5,7 +5,8 @@ namespace LeagueApi\LolStatus\Classes;
 
 use JMS\Serializer\Annotation as JMS;
 
-class Message {
+class Message
+{
     /**
      * @JMS\Type("string")
      * @var string $author

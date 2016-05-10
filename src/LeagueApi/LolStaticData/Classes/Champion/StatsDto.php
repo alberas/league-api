@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class StatsDto
  */
-class StatsDto {
+class StatsDto
+{
     /**
      * @JMS\Type("double")
      * @var double $armor

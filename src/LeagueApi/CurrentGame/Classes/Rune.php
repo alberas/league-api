@@ -14,7 +14,7 @@ class Rune
      * The count of this rune used by the participant
      */
     private $count;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("runeId")

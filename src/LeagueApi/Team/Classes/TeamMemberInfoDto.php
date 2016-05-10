@@ -14,7 +14,7 @@ class TeamMemberInfoDto
      * Date that team member was invited to team specified as epoch milliseconds.
      */
     private $inviteDate;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("joinDate")
@@ -22,14 +22,14 @@ class TeamMemberInfoDto
      * Date that team member joined team specified as epoch milliseconds.
      */
     private $joinDate;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("playerId")
      * @var integer $playerId
      */
     private $playerId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("status")

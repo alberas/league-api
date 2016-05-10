@@ -14,7 +14,7 @@ class Event
      * The ascended type of the event. Only present if relevant. Note that CLEAR_ASCENDED refers to when a participants kills the ascended player. (Legal values: CHAMPION_ASCENDED, CLEAR_ASCENDED, MINION_ASCENDED)
      */
     private $ascendedType;
-    
+
     /**
      * @JMS\Type("array<integer>")
      * @JMS\SerializedName("assistingParticipantIds")
@@ -22,7 +22,7 @@ class Event
      * The assisting participant IDs of the event. Only present if relevant.
      */
     private $assistingParticipantIds;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("buildingType")
@@ -30,7 +30,7 @@ class Event
      * The building type of the event. Only present if relevant. (Legal values: INHIBITOR_BUILDING, TOWER_BUILDING)
      */
     private $buildingType;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("creatorId")
@@ -38,7 +38,7 @@ class Event
      * The creator ID of the event. Only present if relevant.
      */
     private $creatorId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("eventType")
@@ -46,7 +46,7 @@ class Event
      * Event type. (Legal values: ASCENDED_EVENT, BUILDING_KILL, CAPTURE_POINT, CHAMPION_KILL, ELITE_MONSTER_KILL, ITEM_DESTROYED, ITEM_PURCHASED, ITEM_SOLD, ITEM_UNDO, PORO_KING_SUMMON, SKILL_LEVEL_UP, WARD_KILL, WARD_PLACED)
      */
     private $eventType;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("itemAfter")
@@ -54,7 +54,7 @@ class Event
      * The ending item ID of the event. Only present if relevant.
      */
     private $itemAfter;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("itemBefore")
@@ -62,7 +62,7 @@ class Event
      * The starting item ID of the event. Only present if relevant.
      */
     private $itemBefore;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("itemId")
@@ -70,7 +70,7 @@ class Event
      * The item ID of the event. Only present if relevant.
      */
     private $itemId;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("killerId")
@@ -78,7 +78,7 @@ class Event
      * The killer ID of the event. Only present if relevant. Killer ID 0 indicates a minion.
      */
     private $killerId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("laneType")
@@ -86,7 +86,7 @@ class Event
      * The lane type of the event. Only present if relevant. (Legal values: BOT_LANE, MID_LANE, TOP_LANE)
      */
     private $laneType;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("levelUpType")
@@ -94,7 +94,7 @@ class Event
      * The level up type of the event. Only present if relevant. (Legal values: EVOLVE, NORMAL)
      */
     private $levelUpType;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("monsterType")
@@ -102,7 +102,7 @@ class Event
      * The monster type of the event. Only present if relevant. (Legal values: BARON_NASHOR, BLUE_GOLEM, DRAGON, RED_LIZARD, RIFTHERALD, VILEMAW)
      */
     private $monsterType;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("participantId")
@@ -110,7 +110,7 @@ class Event
      * The participant ID of the event. Only present if relevant.
      */
     private $participantId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("pointCaptured")
@@ -118,7 +118,7 @@ class Event
      * The point captured in the event. Only present if relevant. (Legal values: POINT_A, POINT_B, POINT_C, POINT_D, POINT_E)
      */
     private $pointCaptured;
-    
+
     /**
      * @JMS\Type("LeagueApi\Match\Classes\Position")
      * @JMS\SerializedName("position")
@@ -126,7 +126,7 @@ class Event
      * The position of the event. Only present if relevant.
      */
     private $position;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("skillSlot")
@@ -134,7 +134,7 @@ class Event
      * The skill slot of the event. Only present if relevant.
      */
     private $skillSlot;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("teamId")
@@ -142,7 +142,7 @@ class Event
      * The team ID of the event. Only present if relevant.
      */
     private $teamId;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("timestamp")
@@ -150,7 +150,7 @@ class Event
      * Represents how many milliseconds into the game the event occurred.
      */
     private $timestamp;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("towerType")
@@ -158,7 +158,7 @@ class Event
      * The tower type of the event. Only present if relevant. (Legal values: BASE_TURRET, FOUNTAIN_TURRET, INNER_TURRET, NEXUS_TURRET, OUTER_TURRET, UNDEFINED_TURRET)
      */
     private $towerType;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("victimId")
@@ -166,7 +166,7 @@ class Event
      * The victim ID of the event. Only present if relevant.
      */
     private $victimId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("wardType")
@@ -312,14 +312,6 @@ class Event
     }
 
     /**
-     * @return int
-     */
-    public function getTimestamp()
-    {
-        return $this->timestamp;
-    }
-
-    /**
      * @return string
      */
     public function getTowerType()
@@ -350,6 +342,14 @@ class Event
         }
 
         return floor($this->getTimestamp() / 1000 / 60);
+    }
+
+    /**
+     * @return int
+     */
+    public function getTimestamp()
+    {
+        return $this->timestamp;
     }
 
     public function getSeconds($padWithZero = false)

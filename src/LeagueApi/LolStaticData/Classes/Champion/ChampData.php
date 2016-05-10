@@ -4,7 +4,8 @@
 namespace LeagueApi\LolStaticData\Classes\Champion;
 
 
-class ChampData {
+class ChampData
+{
     const ALL = 'all';
     const ALLY_TIPS = 'allytips';
     const ALT_IMAGES = 'altimages';

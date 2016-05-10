@@ -11,7 +11,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class RuneSlotDto
  */
-class RuneSlotDto {
+class RuneSlotDto
+{
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("runeId")

@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class GoldDto
  */
-class GoldDto {
+class GoldDto
+{
 
     /**
      * @JMS\Type("integer")

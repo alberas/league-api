@@ -14,7 +14,7 @@ class Player
      * Match history URI
      */
     private $matchHistoryUri;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("profileIcon")
@@ -22,7 +22,7 @@ class Player
      * Profile icon ID
      */
     private $profileIcon;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("summonerId")
@@ -30,7 +30,7 @@ class Player
      * Summoner ID
      */
     private $summonerId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("summonerName")

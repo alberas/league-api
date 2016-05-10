@@ -7,7 +7,7 @@ namespace LeagueApi\LolStaticData;
 use GuzzleHttp\Client;
 use JMS\Serializer\Serializer;
 use LeagueApi\Api\Api;
-use LeagueApi\Api\CacheableApi;
+use LeagueApi\Api\CacheableApiInterface;
 use LeagueApi\Classes\ListDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionListDto;
@@ -24,7 +24,8 @@ use LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellDto;
 use LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellListDto;
 use LeagueApi\LolStaticData\Exceptions\CacheFileNotFoundException;
 
-class LolStaticDataApi extends Api implements CacheableApi {
+class LolStaticDataApi extends Api implements CacheableApiInterface
+{
 
     private $cacheDirectory;
 
@@ -286,7 +287,7 @@ class LolStaticDataApi extends Api implements CacheableApi {
         if (!file_exists(rtrim($this->cacheDirectory, '/') . '/' . $filename)) {
             throw new CacheFileNotFoundException();
         }
-        
+
         $data = file_get_contents(rtrim($this->cacheDirectory, '/') . '/' . $filename);
 
         if ($data === false) {

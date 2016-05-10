@@ -9,7 +9,8 @@ use LeagueApi\Classes\ImageDto;
 /**
  * Class PassiveDto
  */
-class PassiveDto {
+class PassiveDto
+{
     /**
      * @JMS\Type("string")
      * @var string $description

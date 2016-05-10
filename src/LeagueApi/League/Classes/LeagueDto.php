@@ -14,7 +14,7 @@ class LeagueDto
      * The requested league entries.
      */
     private $entries;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("name")
@@ -30,7 +30,7 @@ class LeagueDto
      * Specifies the relevant participant that is a member of this league (i.e., a requested summoner ID, a requested team ID, or the ID of a team to which one of the requested summoners belongs). Only present when full league is requested so that participant's entry can be identified. Not present when individual entry is requested.
      */
     private $participantId;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("queue")
@@ -38,7 +38,7 @@ class LeagueDto
      * The league's queue type. (Legal values: RANKED_SOLO_5x5, RANKED_TEAM_3x3, RANKED_TEAM_5x5)
      */
     private $queue;
-    
+
     /**
      * @JMS\Type("string")
      * @JMS\SerializedName("tier")
@@ -93,7 +93,7 @@ class LeagueDto
      */
     public function sortEntriesByLeaguePoints($direction = 'ASC')
     {
-        usort($this->entries, function(LeagueEntryDto $left, LeagueEntryDto $right){
+        usort($this->entries, function (LeagueEntryDto $left, LeagueEntryDto $right) {
             if ($left->getLeaguePoints() > $right->getLeaguePoints()) {
                 return 1;
             }

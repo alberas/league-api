@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class InfoDto
  */
-class InfoDto {
+class InfoDto
+{
     /**
      * @JMS\Type("integer")
      * @var integer $attack

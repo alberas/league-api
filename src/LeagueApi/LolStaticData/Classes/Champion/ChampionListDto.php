@@ -9,7 +9,8 @@ use LeagueApi\Classes\ListDto;
 /**
  * @method ChampionDto[] getData()
  */
-class ChampionListDto extends ListDto {
+class ChampionListDto extends ListDto
+{
     /**
      * @JMS\Type("array<string, LeagueApi\LolStaticData\Classes\Champion\ChampionDto>")
      * @var ChampionDto[] $data

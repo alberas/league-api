@@ -8,7 +8,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class MetaDataDto
  */
-class MetaDataDto {
+class MetaDataDto
+{
 
     /**
      * @JMS\Type("boolean")

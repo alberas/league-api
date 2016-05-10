@@ -4,6 +4,7 @@
 namespace LeagueApi\Classes;
 
 
-class DateTime {
+class DateTime
+{
 
 }

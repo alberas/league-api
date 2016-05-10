@@ -11,7 +11,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class MasteryPageDto
  */
-class MasteryPageDto {
+class MasteryPageDto
+{
     /**
      * @JMS\Type("boolean")
      * @var boolean $current

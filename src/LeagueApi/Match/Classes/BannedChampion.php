@@ -14,7 +14,7 @@ class BannedChampion
      * Banned champion ID
      */
     private $championId;
-    
+
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("pickTurn")

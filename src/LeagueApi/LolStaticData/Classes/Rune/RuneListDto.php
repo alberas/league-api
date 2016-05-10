@@ -11,7 +11,8 @@ use LeagueApi\Classes\ListDto;
 /**
  * @method RuneDto[] getData()
  */
-class RuneListDto extends ListDto {
+class RuneListDto extends ListDto
+{
 
     /**
      * @JMS\Type("LeagueApi\Classes\BasicDataDto")

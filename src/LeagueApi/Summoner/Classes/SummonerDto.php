@@ -11,7 +11,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class SummonerDto
  */
-class SummonerDto {
+class SummonerDto
+{
     /**
      * @JMS\Type("integer")
      * @var integer $id

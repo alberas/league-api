@@ -9,7 +9,8 @@ use LeagueApi\Classes\ListDto;
 /**
  * @method MasteryDto[] getData()
  */
-class MasteryListDto extends ListDto {
+class MasteryListDto extends ListDto
+{
 
     /**
      * @JMS\Type("array<string, LeagueApi\LolStaticData\Classes\Mastery\MasteryDto>")

@@ -6,7 +6,8 @@ namespace LeagueApi\LolStaticData\Classes\Map;
 use JMS\Serializer\Annotation as JMS;
 use LeagueApi\Classes\ImageDto;
 
-class MapDto {
+class MapDto
+{
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("mapId")

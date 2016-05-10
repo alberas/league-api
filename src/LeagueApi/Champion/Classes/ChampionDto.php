@@ -9,7 +9,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Class ChampionDto
  */
-class ChampionDto {
+class ChampionDto
+{
     /**
      * @JMS\Type("boolean")
      * @var boolean $active

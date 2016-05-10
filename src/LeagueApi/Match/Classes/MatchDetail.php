@@ -255,13 +255,12 @@ class MatchDetail
      */
     public function getParticipantIdentityForSummoner($summonerId)
     {
-        foreach ($this->participantIdentities as $participantIdentity)
-        {
+        foreach ($this->participantIdentities as $participantIdentity) {
             if ($participantIdentity->getPlayer()->getSummonerId() == $summonerId) {
                 return $participantIdentity;
             }
         }
-        
+
         throw new ParticipantIdentityNotFound();
     }
 
@@ -277,7 +276,7 @@ class MatchDetail
 
     public function getSummonerNamesForParticipantIds(array $participantIds)
     {
-        return array_map(function($id) {
+        return array_map(function ($id) {
             return $this->getSummonerNameForParticipantId($id);
         }, $participantIds);
     }

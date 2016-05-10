@@ -9,7 +9,8 @@ use LeagueApi\Classes\Spell;
 /**
  * Class SummonerSpellDto
  */
-class SummonerSpellDto extends Spell {
+class SummonerSpellDto extends Spell
+{
 
     /**
      * @JMS\Type("integer")
