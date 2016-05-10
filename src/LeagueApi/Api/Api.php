@@ -7,6 +7,12 @@ namespace LeagueApi\Api;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use JMS\Serializer\Serializer;
+use LeagueApi\Api\Exceptions\BadRequestException;
+use LeagueApi\Api\Exceptions\InternalServerErrorException;
+use LeagueApi\Api\Exceptions\NotFoundException;
+use LeagueApi\Api\Exceptions\RateLimitExceededException;
+use LeagueApi\Api\Exceptions\ServiceUnavailableException;
+use LeagueApi\Api\Exceptions\UnauthorizedException;
 
 abstract class Api
 {
@@ -21,9 +27,15 @@ abstract class Api
 
     /**
      * @param $url
-     * @param $query
+     * @param array $query
      * @param string $dataType
      * @return object
+     * @throws BadRequestException
+     * @throws InternalServerErrorException
+     * @throws NotFoundException
+     * @throws RateLimitExceededException
+     * @throws ServiceUnavailableException
+     * @throws UnauthorizedException
      */
     protected function getData($url, array $query, $dataType)
     {
@@ -45,19 +57,22 @@ abstract class Api
             switch ($exception->getCode())
             {
                 case 400:
-                    throw new \Exception("Bad request");
+                    throw new BadRequestException();
                     break;
                 case 401:
-                    throw new \Exception("Unauthorized");
+                    throw new UnauthorizedException();
+                    break;
+                case 404:
+                    throw new NotFoundException();
                     break;
                 case 429:
-                    throw new \Exception("Rate limit exceeded");
+                    throw new RateLimitExceededException();
                     break;
                 case 500:
-                    throw new \Exception("Internal server error");
+                    throw new InternalServerErrorException();
                     break;
                 case 503:
-                    throw new \Exception("Service unavailable");
+                    throw new ServiceUnavailableException();
                     break;
                 default:
                     throw new \LogicException(sprintf('Unknown status code "%s".', $exception->getCode()));
