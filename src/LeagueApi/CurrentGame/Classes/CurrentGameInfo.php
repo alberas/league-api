@@ -15,4 +15,12 @@ class CurrentGameInfo extends GameInfo
      * The participant information
      */
     private $participants;
+
+    /**
+     * @return CurrentGameParticipant[]
+     */
+    public function getParticipants()
+    {
+        return $this->participants;
+    }
 }

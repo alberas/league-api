@@ -15,4 +15,12 @@ class FeaturedGameInfo extends GameInfo
      * The participant information
      */
     private $participants;
+
+    /**
+     * @return Participant[]
+     */
+    public function getParticipants()
+    {
+        return $this->participants;
+    }
 }
