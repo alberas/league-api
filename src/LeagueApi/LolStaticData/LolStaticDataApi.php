@@ -34,7 +34,7 @@ class LolStaticDataApi extends Api implements CacheableApiInterface
         parent::__construct($serializer, $client);
 
         if (!is_dir($cacheDirectory)) {
-            throw new \InvalidArgumentException(sprintf('Invalid cache directory "%s"', $cacheDirectory));
+            throw new \InvalidArgumentException(sprintf('Cache directory "%s" not found.', $cacheDirectory));
         }
 
         $this->cacheDirectory = $cacheDirectory;

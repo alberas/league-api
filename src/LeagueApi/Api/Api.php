@@ -5,6 +5,7 @@ namespace LeagueApi\Api;
 
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use JMS\Serializer\Serializer;
 
 abstract class Api
@@ -34,10 +35,14 @@ abstract class Api
 
         $query = array_merge($query, $defaultQuery);
 
-        $response = $this->client->request('GET', $url, ['query' => $query]);
+        try {
+            $response = $this->client->request('GET', $url, ['query' => $query]);
 
-        $json = $response->getBody()->getContents();
+            $json = $response->getBody()->getContents();
 
-        return $this->serializer->deserialize($json, $dataType, 'json');
+            return $this->serializer->deserialize($json, $dataType, 'json');
+        } catch (GuzzleException $exception) {
+            dump($exception->getCode());die;
+        }
     }
 }
