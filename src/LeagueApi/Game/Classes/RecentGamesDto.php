@@ -40,4 +40,4 @@ class RecentGamesDto
     {
         return $this->summonerId;
     }
-} 
+}

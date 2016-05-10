@@ -107,4 +107,4 @@ class RecommendedDto
     {
         return $this->type;
     }
-} 
+}

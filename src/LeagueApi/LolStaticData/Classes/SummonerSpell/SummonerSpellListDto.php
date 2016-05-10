@@ -17,4 +17,4 @@ class SummonerSpellListDto extends ListDto
      * @var SummonerSpellDto[] $data
      */
     protected $data;
-} 
+}

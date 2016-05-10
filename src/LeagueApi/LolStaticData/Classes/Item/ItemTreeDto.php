@@ -39,4 +39,4 @@ class ItemTreeDto
     {
         return $this->tags;
     }
-} 
+}

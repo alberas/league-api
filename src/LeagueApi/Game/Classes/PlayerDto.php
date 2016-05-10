@@ -56,4 +56,4 @@ class PlayerDto
     {
         return $this->teamId;
     }
-} 
+}

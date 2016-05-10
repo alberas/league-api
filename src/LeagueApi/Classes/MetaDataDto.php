@@ -53,4 +53,4 @@ class MetaDataDto
     {
         return $this->type;
     }
-} 
+}

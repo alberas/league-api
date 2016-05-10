@@ -60,4 +60,4 @@ class ItemListDto extends ListDto
     {
         return $this->tree;
     }
-} 
+}

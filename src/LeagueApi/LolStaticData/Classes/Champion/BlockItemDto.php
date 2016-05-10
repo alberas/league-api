@@ -37,4 +37,4 @@ class BlockItemDto
     {
         return $this->id;
     }
-} 
+}

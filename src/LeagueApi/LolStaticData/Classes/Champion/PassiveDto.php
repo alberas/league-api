@@ -67,4 +67,4 @@ class PassiveDto
     {
         return $this->sanitizedDescription;
     }
-} 
+}

@@ -44,4 +44,4 @@ class RuneSlotDto
     {
         return $this->runeSlotId;
     }
-} 
+}

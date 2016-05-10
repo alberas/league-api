@@ -39,4 +39,4 @@ class MasteryTreeItemDto
     {
         return $this->prereq;
     }
-} 
+}

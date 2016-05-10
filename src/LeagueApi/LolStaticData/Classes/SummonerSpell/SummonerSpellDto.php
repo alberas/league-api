@@ -54,4 +54,4 @@ class SummonerSpellDto extends Spell
     {
         return $this->modes;
     }
-} 
+}

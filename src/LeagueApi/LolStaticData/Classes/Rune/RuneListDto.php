@@ -33,4 +33,4 @@ class RuneListDto extends ListDto
     {
         return $this->basic;
     }
-} 
+}

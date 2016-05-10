@@ -110,4 +110,4 @@ class MasteryDto
     {
         return $this->sanitizedDescription;
     }
-} 
+}

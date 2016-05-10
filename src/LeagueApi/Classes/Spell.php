@@ -296,5 +296,4 @@ abstract class Spell
     {
         return $this->vars;
     }
-
-} 
+}

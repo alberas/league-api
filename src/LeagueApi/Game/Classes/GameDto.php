@@ -247,4 +247,4 @@ class GameDto
     {
         return $this->teamId;
     }
-} 
+}

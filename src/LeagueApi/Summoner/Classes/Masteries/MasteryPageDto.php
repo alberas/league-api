@@ -72,4 +72,4 @@ class MasteryPageDto
     {
         return $this->name;
     }
-} 
+}

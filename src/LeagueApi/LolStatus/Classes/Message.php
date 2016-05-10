@@ -104,5 +104,4 @@ class Message
     {
         return $this->updated_at;
     }
-
 }

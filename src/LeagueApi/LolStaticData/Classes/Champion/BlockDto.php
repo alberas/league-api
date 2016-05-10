@@ -51,4 +51,4 @@ class BlockDto
     {
         return $this->type;
     }
-} 
+}

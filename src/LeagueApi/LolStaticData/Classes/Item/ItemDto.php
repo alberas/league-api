@@ -21,4 +21,4 @@ class ItemDto extends BasicDataDto
     {
         return $this->effect;
     }
-} 
+}

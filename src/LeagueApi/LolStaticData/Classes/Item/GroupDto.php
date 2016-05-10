@@ -38,4 +38,4 @@ class GroupDto
     {
         return $this->key;
     }
-} 
+}

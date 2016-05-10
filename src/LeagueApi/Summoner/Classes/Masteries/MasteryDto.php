@@ -42,4 +42,4 @@ class MasteryDto
     {
         return $this->rank;
     }
-} 
+}

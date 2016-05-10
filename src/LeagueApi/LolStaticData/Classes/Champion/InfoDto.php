@@ -65,4 +65,4 @@ class InfoDto
     {
         return $this->magic;
     }
-} 
+}

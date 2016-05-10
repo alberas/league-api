@@ -55,4 +55,4 @@ class MasteryTreeDto
     {
         return $this->Utility;
     }
-} 
+}

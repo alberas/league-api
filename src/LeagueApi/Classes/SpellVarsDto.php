@@ -80,4 +80,4 @@ class SpellVarsDto
     {
         return $this->ranksWith;
     }
-} 
+}

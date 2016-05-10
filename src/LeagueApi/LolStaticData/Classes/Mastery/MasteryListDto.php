@@ -31,4 +31,4 @@ class MasteryListDto extends ListDto
     {
         return $this->tree;
     }
-} 
+}

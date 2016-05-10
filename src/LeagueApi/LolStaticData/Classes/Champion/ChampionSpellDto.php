@@ -17,4 +17,4 @@ class ChampionSpellDto extends Spell
      * @var ImageDto[] $altimages
      */
     protected $altimages;
-} 
+}

@@ -65,4 +65,4 @@ class ChampionListDto
             return !$championDto->isFreeToPlay();
         });
     }
-} 
+}

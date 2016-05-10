@@ -289,4 +289,4 @@ class StatsDto
     {
         return $this->spellblockperlevel;
     }
-} 
+}

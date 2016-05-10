@@ -248,4 +248,4 @@ class ChampionDto
     {
         return $this->title;
     }
-} 
+}

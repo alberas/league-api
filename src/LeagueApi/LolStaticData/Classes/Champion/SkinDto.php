@@ -51,4 +51,4 @@ class SkinDto
     {
         return $this->num;
     }
-} 
+}

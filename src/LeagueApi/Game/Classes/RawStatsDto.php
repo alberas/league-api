@@ -1124,4 +1124,4 @@ class RawStatsDto
     {
         return $this->win;
     }
-} 
+}

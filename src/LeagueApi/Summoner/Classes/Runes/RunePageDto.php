@@ -72,4 +72,4 @@ class RunePageDto
     {
         return $this->name;
     }
-} 
+}
