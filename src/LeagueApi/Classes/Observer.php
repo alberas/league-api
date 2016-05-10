@@ -1,7 +1,7 @@
 <?php
 
 
-namespace LeagueApi\FeaturedGames\Classes;
+namespace LeagueApi\Classes;
 
 use JMS\Serializer\Annotation as JMS;
 

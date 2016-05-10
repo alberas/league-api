@@ -65,4 +65,4 @@ class GoldDto {
     {
         return $this->total;
     }
-} 
+}

@@ -106,4 +106,4 @@ class ImageDto {
     {
         return $this->y;
     }
-} 
+}
