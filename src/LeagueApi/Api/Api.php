@@ -42,7 +42,26 @@ abstract class Api
 
             return $this->serializer->deserialize($json, $dataType, 'json');
         } catch (GuzzleException $exception) {
-            dump($exception->getCode());die;
+            switch ($exception->getCode())
+            {
+                case 400:
+                    throw new \Exception("Bad request");
+                    break;
+                case 401:
+                    throw new \Exception("Unauthorized");
+                    break;
+                case 429:
+                    throw new \Exception("Rate limit exceeded");
+                    break;
+                case 500:
+                    throw new \Exception("Internal server error");
+                    break;
+                case 503:
+                    throw new \Exception("Service unavailable");
+                    break;
+                default:
+                    throw new \LogicException(sprintf('Unknown status code "%s".', $exception->getCode()));
+            }
         }
     }
 }
