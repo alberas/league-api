@@ -1,7 +1,6 @@
 <?php
 
-
-namespace LeagueApi\FeaturedGames\Classes;
+namespace LeagueApi\Classes;
 
 use JMS\Serializer\Annotation as JMS;
 
@@ -14,7 +13,7 @@ class BannedChampion
      * The ID of the banned champion
      */
     private $championId;
-
+    
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("pickTurn")
@@ -22,7 +21,7 @@ class BannedChampion
      * The turn during which the champion was banned
      */
     private $pickTurn;
-
+    
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("teamId")

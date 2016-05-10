@@ -4,17 +4,10 @@
 namespace LeagueApi\CurrentGame\Classes;
 
 use JMS\Serializer\Annotation as JMS;
+use LeagueApi\Classes\GameInfo;
 
-class CurrentGameInfo
+class CurrentGameInfo extends GameInfo
 {
-    /**
-     * @JMS\Type("array<LeagueApi\CurrentGame\Classes\BannedChampion>")
-     * @JMS\SerializedName("bannedChampions")
-     * @var BannedChampion[] $bannedChampions
-     * Banned champion information
-     */
-    private $bannedChampions;
-
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("gameId")
@@ -94,14 +87,6 @@ class CurrentGameInfo
      * The ID of the platform on which the game is being played
      */
     private $platformId;
-
-    /**
-     * @return BannedChampion[]
-     */
-    public function getBannedChampions()
-    {
-        return $this->bannedChampions;
-    }
 
     /**
      * @return int

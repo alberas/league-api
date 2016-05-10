@@ -4,7 +4,6 @@
 namespace LeagueApi\Factory;
 
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
 use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use LeagueApi\Api\Api;

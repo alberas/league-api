@@ -3,7 +3,6 @@
 
 namespace LeagueApi\Stats\Classes;
 
-use JMS\Serializer\Annotation as JMS;
 
 class Season
 {
