@@ -1,7 +1,4 @@
 <?php
-/**
- * @author Simeon Kolev
- */
 
 namespace LeagueApi\Summoner\Classes\Runes;
 
