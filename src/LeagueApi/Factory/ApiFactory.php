@@ -84,7 +84,7 @@ class ApiFactory
                 break;
             case 'SummonerApi':
                 $class = SummonerApi::class;
-                $arguments[2] = 'v1.4';
+                $arguments[2] = SummonerApi::VERSION;
                 break;
             case 'LolStatusApi':
                 $class = LolStatusApi::class;
