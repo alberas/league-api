@@ -71,16 +71,16 @@ class ApiFactory
         switch ($name) {
             case 'ChampionApi':
                 $class = ChampionApi::class;
-                $arguments[2] = 'v1.2';
+                $arguments[2] = ChampionApi::VERSION;
                 break;
             case 'LolStaticDataApi':
                 $cacheDirectory = $arguments[2];
                 $class = LolStaticDataApi::class;
-                $arguments[2] = 'v1.2';
+                $arguments[2] = LolStaticDataApi::VERSION;
                 break;
             case 'GameApi':
                 $class = GameApi::class;
-                $arguments[2] = 'v1.3';
+                $arguments[2] = GameApi::VERSION;
                 break;
             case 'SummonerApi':
                 $class = SummonerApi::class;
@@ -94,23 +94,23 @@ class ApiFactory
                 break;
             case 'LeagueApi':
                 $class = LeagueApi::class;
-                $arguments[2] = 'v2.5';
+                $arguments[2] = LeagueApi::VERSION;
                 break;
             case 'MatchApi':
                 $class = MatchApi::class;
-                $arguments[2] = 'v2.2';
+                $arguments[2] = MatchApi::VERSION;
                 break;
             case 'MatchListApi':
                 $class = MatchListApi::class;
-                $arguments[2] = 'v2.2';
+                $arguments[2] = MatchListApi::VERSION;
                 break;
             case 'StatsApi':
                 $class = StatsApi::class;
-                $arguments[2] = 'v1.3';
+                $arguments[2] = StatsApi::VERSION;
                 break;
             case 'TeamApi':
                 $class = TeamApi::class;
-                $arguments[2] = 'v2.4';
+                $arguments[2] = TeamApi::VERSION;
                 break;
             case 'ChampionMasteryApi':
                 $class = ChampionMasteryApi::class;
@@ -122,10 +122,12 @@ class ApiFactory
                 throw new \InvalidArgumentException(sprintf('Unable to find API "%s".', $name));
         }
 
+        $client = call_user_func([ClientFactory::class, '__callStatic'], $name . 'Client', $arguments);
+
         if (isset($cacheDirectory)) {
-            return new $class(self::getSerializer(), call_user_func([ClientFactory::class, '__callStatic'], $name . 'Client', $arguments), $cacheDirectory);
+            return new $class(self::getSerializer(), $client, $cacheDirectory);
         }
 
-        return new $class(self::getSerializer(), call_user_func([ClientFactory::class, '__callStatic'], $name . 'Client', $arguments));
+        return new $class(self::getSerializer(), $client);
     }
 }

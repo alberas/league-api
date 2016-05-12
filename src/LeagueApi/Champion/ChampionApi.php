@@ -10,6 +10,7 @@ use LeagueApi\Champion\Classes\ChampionListDto;
 
 class ChampionApi extends Api
 {
+    const VERSION = 'v1.2';
 
     /**
      * @param boolean $freeToPlay Optional filter param to retrieve only free to play champions.

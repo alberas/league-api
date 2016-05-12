@@ -10,6 +10,8 @@ use LeagueApi\Stats\Classes\RankedStatsDto;
 
 class StatsApi extends Api
 {
+    const VERSION = 'v1.3';
+    
     /**
      * @param string $summonerId
      * @param string $season

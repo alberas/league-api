@@ -9,6 +9,8 @@ use LeagueApi\MatchList\Classes\MatchList;
 
 class MatchListApi extends Api
 {
+    const VERSION = 'v2.2';
+
     /**
      * @param string $summonerId The ID of the summoner.
      * @param array $championIds Comma-separated list of champion IDs to use for fetching games.

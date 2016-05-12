@@ -6,13 +6,13 @@ namespace LeagueApi\Summoner;
 
 use LeagueApi\Api\Api;
 use LeagueApi\Api\Exceptions\NotFoundException;
-use LeagueApi\Factory\ClientFactory;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\Summoner\Classes\Masteries\MasteryPagesDto;
 use LeagueApi\Summoner\Classes\Runes\RunePagesDto;
 use LeagueApi\Summoner\Classes\SummonerDto;
 use LeagueApi\Summoner\Exceptions\SummonerNotFoundException;
 
-class SummonerApi extends Api
+class SummonerApi extends RegionApi
 {
     const VERSION = 'v1.4';
 
@@ -146,14 +146,8 @@ class SummonerApi extends Api
         return str_replace(' ', '', strtolower($summonerName));
     }
 
-    public function setRegion($region)
+    public function getVersion()
     {
-        $query = $this->client->getConfig('query');
-
-        if (is_array($query) && isset($query['api_key'])) {
-            $apiKey = $query['api_key'];
-
-            $this->client = ClientFactory::SummonerApiClient($apiKey, $region, self::VERSION);
-        }
+        return self::VERSION;
     }
 }

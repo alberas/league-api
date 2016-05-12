@@ -26,6 +26,7 @@ use LeagueApi\LolStaticData\Exceptions\CacheFileNotFoundException;
 
 class LolStaticDataApi extends Api implements CacheableApiInterface
 {
+    const VERSION = 'v1.2';
 
     private $cacheDirectory;
 

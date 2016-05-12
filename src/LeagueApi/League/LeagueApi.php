@@ -9,6 +9,8 @@ use LeagueApi\League\Classes\LeagueDto;
 
 class LeagueApi extends Api
 {
+    const VERSION = 'v2.5';
+
     /**
      * @param array $summonerIds
      * @return LeagueDto[]

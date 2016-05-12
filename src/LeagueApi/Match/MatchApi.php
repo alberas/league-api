@@ -9,6 +9,8 @@ use LeagueApi\Match\Classes\MatchDetail;
 
 class MatchApi extends Api
 {
+    const VERSION = 'v2.2';
+
     /**
      * @param $matchId
      * @param bool $includeTimeline

@@ -9,6 +9,8 @@ use LeagueApi\Team\Classes\TeamDto;
 
 class TeamApi extends Api
 {
+    const VERSION = 'v2.4';
+    
     /**
      * @param array $summonerIds
      * @return TeamDto
