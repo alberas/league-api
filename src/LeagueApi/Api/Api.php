@@ -4,10 +4,11 @@
 namespace LeagueApi\Api;
 
 
-use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
-use JMS\Serializer\Serializer;
+use JMS\Serializer\SerializerInterface;
 use LeagueApi\Api\Exceptions\BadRequestException;
+use LeagueApi\Api\Exceptions\ForbiddenException;
 use LeagueApi\Api\Exceptions\InternalServerErrorException;
 use LeagueApi\Api\Exceptions\NotFoundException;
 use LeagueApi\Api\Exceptions\RateLimitExceededException;
@@ -16,10 +17,17 @@ use LeagueApi\Api\Exceptions\UnauthorizedException;
 
 abstract class Api
 {
+    /**
+     * @var SerializerInterface $serializer
+     */
     protected $serializer;
+
+    /**
+     * @var ClientInterface $client
+     */
     protected $client;
 
-    public function __construct(Serializer $serializer, Client $client)
+    public function __construct(SerializerInterface $serializer, ClientInterface $client)
     {
         $this->serializer = $serializer;
         $this->client = $client;
@@ -31,6 +39,7 @@ abstract class Api
      * @param string $dataType
      * @return object
      * @throws BadRequestException
+     * @throws ForbiddenException
      * @throws InternalServerErrorException
      * @throws NotFoundException
      * @throws RateLimitExceededException
@@ -61,6 +70,9 @@ abstract class Api
                     break;
                 case 401:
                     throw new UnauthorizedException();
+                    break;
+                case 403:
+                    throw new ForbiddenException();
                     break;
                 case 404:
                     throw new NotFoundException();

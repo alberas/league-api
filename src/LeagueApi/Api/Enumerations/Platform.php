@@ -1,10 +1,10 @@
 <?php
 
 
-namespace LeagueApi\ChampionMastery\Classes;
+namespace LeagueApi\Api\Enumerations;
 
 
-class Platforms
+class Platform
 {
     const BR1 = 'BR1';
     const EUN1 = 'EUN1';

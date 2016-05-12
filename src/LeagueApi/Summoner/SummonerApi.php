@@ -4,8 +4,8 @@
 namespace LeagueApi\Summoner;
 
 
-use GuzzleHttp\Exception\ClientException;
 use LeagueApi\Api\Api;
+use LeagueApi\Api\Exceptions\NotFoundException;
 use LeagueApi\Summoner\Classes\Masteries\MasteryPagesDto;
 use LeagueApi\Summoner\Classes\Runes\RunePagesDto;
 use LeagueApi\Summoner\Classes\SummonerDto;
@@ -25,7 +25,7 @@ class SummonerApi extends Api
 
         try {
             return $this->getData($url, [], $dataType)[$this->standardizeSummonerName($summonerName)];
-        } catch (ClientException $e) {
+        } catch (NotFoundException $e) {
             throw new SummonerNotFoundException();
         }
     }
@@ -41,7 +41,7 @@ class SummonerApi extends Api
 
         try {
             return $this->getData($summonerId, [], $dataType)[$summonerId];
-        } catch (ClientException $e) {
+        } catch (NotFoundException $e) {
             throw new SummonerNotFoundException();
         }
     }
@@ -58,7 +58,7 @@ class SummonerApi extends Api
 
         try {
             return $this->getData($url, [], $dataType);
-        } catch (ClientException $e) {
+        } catch (NotFoundException $e) {
             throw new SummonerNotFoundException();
         }
     }
@@ -75,7 +75,7 @@ class SummonerApi extends Api
 
         try {
             return $this->getData($url, [], $dataType);
-        } catch (ClientException $e) {
+        } catch (NotFoundException $e) {
             throw new SummonerNotFoundException();
         }
     }
@@ -93,7 +93,7 @@ class SummonerApi extends Api
 
         try {
             return $this->getData($url, [], $dataType);
-        } catch (ClientException $e) {
+        } catch (NotFoundException $e) {
             throw new SummonerNotFoundException();
         }
     }
@@ -111,7 +111,7 @@ class SummonerApi extends Api
 
         try {
             return $this->getData($url, [], $dataType);
-        } catch (ClientException $e) {
+        } catch (NotFoundException $e) {
             throw new SummonerNotFoundException();
         }
     }
@@ -128,7 +128,7 @@ class SummonerApi extends Api
 
         try {
             return $this->getData($url, [], $dataType);
-        } catch (ClientException $e) {
+        } catch (NotFoundException $e) {
             throw new SummonerNotFoundException();
         }
     }

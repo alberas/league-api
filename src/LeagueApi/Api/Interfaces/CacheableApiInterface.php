@@ -1,7 +1,7 @@
 <?php
 
 
-namespace LeagueApi\Api;
+namespace LeagueApi\Api\Interfaces;
 
 
 interface CacheableApiInterface

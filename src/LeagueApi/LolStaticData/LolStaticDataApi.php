@@ -7,7 +7,7 @@ namespace LeagueApi\LolStaticData;
 use GuzzleHttp\Client;
 use JMS\Serializer\Serializer;
 use LeagueApi\Api\Api;
-use LeagueApi\Api\CacheableApiInterface;
+use LeagueApi\Api\Interfaces\CacheableApiInterface;
 use LeagueApi\Classes\ListDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionListDto;

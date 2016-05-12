@@ -1,10 +1,10 @@
 <?php
 
 
-namespace LeagueApi\Api;
+namespace LeagueApi\Api\Enumerations;
 
 
-class ApiRegion
+class Region
 {
     const BR = 'br';
     const EUNE = 'eune';
