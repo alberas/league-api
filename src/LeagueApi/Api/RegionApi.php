@@ -5,7 +5,6 @@ namespace LeagueApi\Api;
 
 
 use LeagueApi\Api\Enumerations\Platform;
-use LeagueApi\Api\Enumerations\Region;
 use LeagueApi\Factory\ClientFactory;
 use LeagueApi\Traits\VersionTrait;
 

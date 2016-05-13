@@ -7,14 +7,21 @@ namespace LeagueApi\Factory;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Uri;
 use LeagueApi\Api\Enumerations\Platform;
-use LeagueApi\Api\Enumerations\Region;
 
 /**
  * @method static Client ChampionApiClient($apiKey, $region, $version)
  * @method static Client LolStaticDataApiClient($apiKey, $region, $version)
  * @method static Client GameApiClient($apiKey, $region, $version)
  * @method static Client SummonerApiClient($apiKey, $region, $version)
- * @method static Client LolStatusApiClient($apiKey, $region, $version)
+ * @method static Client LolStatusApiClient()
+ * @method static Client FeaturedGamesApiClient($apiKey, $region)
+ * @method static Client LeagueApiClient($apiKey, $region, $version)
+ * @method static Client MatchApiClient($apiKey, $region, $version)
+ * @method static Client MatchListApiClient($apiKey, $region, $version)
+ * @method static Client StatsApiClient($apiKey, $region, $version)
+ * @method static Client TeamApiClient($apiKey, $region, $version)
+ * @method static Client ChampionMasteryApiClient($apiKey, $region)
+ * @method static Client CurrentGameApiClient($apiKey, $region)
  */
 class ClientFactory
 {
