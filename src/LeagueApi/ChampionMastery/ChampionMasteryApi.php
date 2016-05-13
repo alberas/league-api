@@ -4,10 +4,10 @@
 namespace LeagueApi\ChampionMastery;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\ChampionMastery\Classes\ChampionMasteryDTO;
 
-class ChampionMasteryApi extends Api
+class ChampionMasteryApi extends RegionApi
 {
     /**
      * @param string $summonerId Summoner ID associated with the player

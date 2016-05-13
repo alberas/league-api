@@ -4,11 +4,13 @@
 namespace LeagueApi\Match;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\Match\Classes\MatchDetail;
+use LeagueApi\Traits\VersionTrait;
 
-class MatchApi extends Api
+class MatchApi extends RegionApi
 {
+    use VersionTrait;
     const VERSION = 'v2.2';
 
     /**

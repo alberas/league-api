@@ -63,8 +63,7 @@ abstract class Api
 
             return $this->serializer->deserialize($json, $dataType, 'json');
         } catch (GuzzleException $exception) {
-            switch ($exception->getCode())
-            {
+            switch ($exception->getCode()) {
                 case 400:
                     throw new BadRequestException();
                     break;

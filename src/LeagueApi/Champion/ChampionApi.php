@@ -4,13 +4,15 @@
 namespace LeagueApi\Champion;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\Champion\Classes\ChampionDto;
 use LeagueApi\Champion\Classes\ChampionListDto;
+use LeagueApi\Traits\VersionTrait;
 
-class ChampionApi extends Api
+class ChampionApi extends RegionApi
 {
     const VERSION = 'v1.2';
+    use VersionTrait;
 
     /**
      * @param boolean $freeToPlay Optional filter param to retrieve only free to play champions.
@@ -18,7 +20,7 @@ class ChampionApi extends Api
      */
     public function getChampions($freeToPlay = false)
     {
-        $query = array();
+        $query = [];
 
         if ($freeToPlay) {
             $query['freeToPlay'] = 'true';

@@ -4,11 +4,13 @@
 namespace LeagueApi\League;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\League\Classes\LeagueDto;
+use LeagueApi\Traits\VersionTrait;
 
-class LeagueApi extends Api
+class LeagueApi extends RegionApi
 {
+    use VersionTrait;
     const VERSION = 'v2.5';
 
     /**

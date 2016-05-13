@@ -264,9 +264,11 @@ class MatchDetail
         throw new ParticipantIdentityNotFound();
     }
 
-    public function getSummonerNameForParticipantIdentity(ParticipantIdentity $participantIdentity)
+    public function getSummonerNamesForParticipantIds(array $participantIds)
     {
-        return $participantIdentity->getPlayer()->getSummonerName();
+        return array_map(function ($id) {
+            return $this->getSummonerNameForParticipantId($id);
+        }, $participantIds);
     }
 
     public function getSummonerNameForParticipantId($participantId)
@@ -274,11 +276,9 @@ class MatchDetail
         return $this->getSummonerNameForParticipantIdentity($this->participantIdentities[$participantId - 1]);
     }
 
-    public function getSummonerNamesForParticipantIds(array $participantIds)
+    public function getSummonerNameForParticipantIdentity(ParticipantIdentity $participantIdentity)
     {
-        return array_map(function ($id) {
-            return $this->getSummonerNameForParticipantId($id);
-        }, $participantIds);
+        return $participantIdentity->getPlayer()->getSummonerName();
     }
 
     public function getChampionIdForParticipantId($participantId)

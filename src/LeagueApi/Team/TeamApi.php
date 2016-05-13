@@ -4,13 +4,15 @@
 namespace LeagueApi\Team;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\Team\Classes\TeamDto;
+use LeagueApi\Traits\VersionTrait;
 
-class TeamApi extends Api
+class TeamApi extends RegionApi
 {
+    use VersionTrait;
     const VERSION = 'v2.4';
-    
+
     /**
      * @param array $summonerIds
      * @return TeamDto

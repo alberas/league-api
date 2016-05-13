@@ -6,6 +6,8 @@ namespace LeagueApi\Factory;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Uri;
+use LeagueApi\Api\Enumerations\Platform;
+use LeagueApi\Api\Enumerations\Region;
 
 /**
  * @method static Client ChampionApiClient($apiKey, $region, $version)
@@ -13,7 +15,6 @@ use GuzzleHttp\Psr7\Uri;
  * @method static Client GameApiClient($apiKey, $region, $version)
  * @method static Client SummonerApiClient($apiKey, $region, $version)
  * @method static Client LolStatusApiClient($apiKey, $region, $version)
- *
  */
 class ClientFactory
 {
@@ -36,6 +37,7 @@ class ClientFactory
                 break;
             case 'ChampionMasteryApiClient':
             case 'CurrentGameApiClient':
+                $arguments[2] = Platform::getPlatformByRegion($arguments[1]);
                 $uriArguments = [$arguments[1], $arguments[2]];
                 break;
             case 'ChampionApiClient':
@@ -60,7 +62,7 @@ class ClientFactory
     {
         $config = [
             'base_uri' => $uri,
-            'verify' => false,
+            'verify'   => false,
         ];
 
         if ($apiKey) {

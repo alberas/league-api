@@ -4,11 +4,13 @@
 namespace LeagueApi\MatchList;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\MatchList\Classes\MatchList;
+use LeagueApi\Traits\VersionTrait;
 
-class MatchListApi extends Api
+class MatchListApi extends RegionApi
 {
+    use VersionTrait;
     const VERSION = 'v2.2';
 
     /**
@@ -22,7 +24,7 @@ class MatchListApi extends Api
      * @param null $endIndex The end index to use for fetching games.
      * @return MatchList
      */
-    public function getMatchList($summonerId, array $championIds = array(), array $rankedQueues = array(), array $seasons = array(), $beginTime = null, $endTime = null, $beginIndex = null, $endIndex = null)
+    public function getMatchList($summonerId, array $championIds = [], array $rankedQueues = [], array $seasons = [], $beginTime = null, $endTime = null, $beginIndex = null, $endIndex = null)
     {
         $query = [];
 

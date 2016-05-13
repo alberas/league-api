@@ -4,16 +4,17 @@
 namespace LeagueApi\Summoner;
 
 
-use LeagueApi\Api\Api;
 use LeagueApi\Api\Exceptions\NotFoundException;
 use LeagueApi\Api\RegionApi;
 use LeagueApi\Summoner\Classes\Masteries\MasteryPagesDto;
 use LeagueApi\Summoner\Classes\Runes\RunePagesDto;
 use LeagueApi\Summoner\Classes\SummonerDto;
 use LeagueApi\Summoner\Exceptions\SummonerNotFoundException;
+use LeagueApi\Traits\VersionTrait;
 
 class SummonerApi extends RegionApi
 {
+    use VersionTrait;
     const VERSION = 'v1.4';
 
     /**
@@ -144,10 +145,5 @@ class SummonerApi extends RegionApi
     private function standardizeSummonerName($summonerName)
     {
         return str_replace(' ', '', strtolower($summonerName));
-    }
-
-    public function getVersion()
-    {
-        return self::VERSION;
     }
 }

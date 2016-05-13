@@ -4,10 +4,10 @@
 namespace LeagueApi\CurrentGame;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\CurrentGame\Classes\CurrentGameInfo;
 
-class CurrentGameApi extends Api
+class CurrentGameApi extends RegionApi
 {
     /**
      * @param string $summonerId The ID of the summoner.

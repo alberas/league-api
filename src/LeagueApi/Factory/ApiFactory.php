@@ -33,8 +33,8 @@ use LeagueApi\Team\TeamApi;
  * @method static MatchListApi MatchListApi($apiKey, $region)
  * @method static StatsApi StatsApi($apiKey, $region)
  * @method static TeamApi TeamApi($apiKey, $region)
- * @method static ChampionMasteryApi ChampionMasteryApi($apiKey, $region, $platformId)
- * @method static CurrentGameApi CurrentGameApi($apiKey, $region, $platformId)
+ * @method static ChampionMasteryApi ChampionMasteryApi($apiKey, $region)
+ * @method static CurrentGameApi CurrentGameApi($apiKey, $region)
  */
 class ApiFactory
 {

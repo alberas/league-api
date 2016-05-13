@@ -4,10 +4,10 @@
 namespace LeagueApi\FeaturedGames;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\FeaturedGames\Classes\FeaturedGames;
 
-class FeaturedGamesApi extends Api
+class FeaturedGamesApi extends RegionApi
 {
     /**
      * @return FeaturedGames

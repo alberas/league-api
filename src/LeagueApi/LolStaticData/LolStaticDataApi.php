@@ -6,8 +6,8 @@ namespace LeagueApi\LolStaticData;
 
 use GuzzleHttp\Client;
 use JMS\Serializer\Serializer;
-use LeagueApi\Api\Api;
 use LeagueApi\Api\Interfaces\CacheableApiInterface;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\Classes\ListDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionDto;
 use LeagueApi\LolStaticData\Classes\Champion\ChampionListDto;
@@ -23,9 +23,11 @@ use LeagueApi\LolStaticData\Classes\Rune\RuneListDto;
 use LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellDto;
 use LeagueApi\LolStaticData\Classes\SummonerSpell\SummonerSpellListDto;
 use LeagueApi\LolStaticData\Exceptions\CacheFileNotFoundException;
+use LeagueApi\Traits\VersionTrait;
 
-class LolStaticDataApi extends Api implements CacheableApiInterface
+class LolStaticDataApi extends RegionApi implements CacheableApiInterface
 {
+    use VersionTrait;
     const VERSION = 'v1.2';
 
     private $cacheDirectory;

@@ -4,14 +4,16 @@
 namespace LeagueApi\Stats;
 
 
-use LeagueApi\Api\Api;
+use LeagueApi\Api\RegionApi;
 use LeagueApi\Stats\Classes\PlayerStatsSummaryListDto;
 use LeagueApi\Stats\Classes\RankedStatsDto;
+use LeagueApi\Traits\VersionTrait;
 
-class StatsApi extends Api
+class StatsApi extends RegionApi
 {
+    use VersionTrait;
     const VERSION = 'v1.3';
-    
+
     /**
      * @param string $summonerId
      * @param string $season
