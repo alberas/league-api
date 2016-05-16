@@ -17,9 +17,10 @@ class MatchDetail
     private $mapId;
 
     /**
-     * @JMS\Type("integer")
+     * @JMS\Type("string")
      * @JMS\SerializedName("matchCreation")
-     * @var integer $matchCreation
+     * @JMS\Accessor(setter="setMatchCreation", getter="getMatchCreation")
+     * @var \DateTime $matchCreation
      * Match creation time. Designates when the team select lobby is created and/or the match is made through match making, not when the game actually starts.
      */
     private $matchCreation;
@@ -27,7 +28,8 @@ class MatchDetail
     /**
      * @JMS\Type("integer")
      * @JMS\SerializedName("matchDuration")
-     * @var integer $matchDuration
+     * @JMS\Accessor(setter="setMatchDuration", getter="getMatchDuration")
+     * @var \DateInterval $matchDuration
      * Match duration
      */
     private $matchDuration;
@@ -137,7 +139,7 @@ class MatchDetail
     }
 
     /**
-     * @return int
+     * @return \DateTime
      */
     public function getMatchCreation()
     {
@@ -289,5 +291,25 @@ class MatchDetail
     public function getRoleForParticipantId($participantId)
     {
         return $this->participants[$participantId - 1]->getTimeline()->getRole();
+    }
+
+    /**
+     * @param integer $matchCreation
+     */
+    public function setMatchCreation($matchCreation)
+    {
+        $this->matchCreation = \DateTime::createFromFormat('U', intval($matchCreation / 1000));
+    }
+
+    /**
+     * @param integer $matchDuration
+     */
+    public function setMatchDuration($matchDuration)
+    {
+        $hours = floor($matchDuration / 3600);
+        $minutes = floor($matchDuration / 60);
+        $seconds = $matchDuration % 60;
+
+        $this->matchDuration = new \DateInterval('PT' . $hours . 'H' . $minutes . 'M' . $seconds . 'S');
     }
 }

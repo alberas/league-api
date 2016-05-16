@@ -3,6 +3,7 @@
 
 namespace LeagueApi\MatchList\Classes;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as JMS;
 
 class MatchList
@@ -15,9 +16,9 @@ class MatchList
     private $endIndex;
 
     /**
-     * @JMS\Type("array<LeagueApi\MatchList\Classes\MatchReference>")
+     * @JMS\Type("ArrayCollection<LeagueApi\MatchList\Classes\MatchReference>")
      * @JMS\SerializedName("matches")
-     * @var MatchReference[] $matches
+     * @var ArrayCollection|MatchReference[] $matches
      */
     private $matches;
 
@@ -44,7 +45,7 @@ class MatchList
     }
 
     /**
-     * @return MatchReference[]
+     * @return ArrayCollection|MatchReference[]
      */
     public function getMatches()
     {

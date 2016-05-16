@@ -37,7 +37,7 @@ class SummonerDto
      * @JMS\Type("string")
      * @JMS\SerializedName("revisionDate")
      * @JMS\Accessor(setter="setRevisionDate", getter="getRevisionDate")
-     * @var string $revisionDate
+     * @var \DateTime $revisionDate
      * Date summoner was last modified specified as epoch milliseconds.
      */
     private $revisionDate;
@@ -95,6 +95,6 @@ class SummonerDto
      */
     public function setRevisionDate($revisionDate)
     {
-        $this->revisionDate = \DateTime::createFromFormat('U', $revisionDate / 1000);;
+        $this->revisionDate = \DateTime::createFromFormat('U', $revisionDate / 1000);
     }
 }
